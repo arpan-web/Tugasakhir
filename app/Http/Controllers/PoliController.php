@@ -6,8 +6,20 @@ use Illuminate\Http\Request;
 
 use App\Models\Poli;
 
+use Illuminate\Support\Facades\Auth;
+
 class PoliController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(function ($request, $next) {
+            if (Auth::user() && Auth::user()->role !== 'admin') {
+                abort(403, 'Akses ditolak. Hanya Admin yang dapat mengelola data master Poliklinik.');
+            }
+            return $next($request);
+        });
+    }
+
     public function index()
     {
         $polis = Poli::orderBy('created_at', 'desc')->paginate(10);

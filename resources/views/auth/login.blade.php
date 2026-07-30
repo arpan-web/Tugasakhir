@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -145,7 +146,7 @@
             border-radius: 10px;
             font-size: 0.875rem;
             border: none;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
 
         .invalid-feedback {
@@ -153,58 +154,65 @@
         }
     </style>
 </head>
+
 <body>
 
-<div class="blob-1"></div>
-<div class="blob-2"></div>
+    <div class="blob-1"></div>
+    <div class="blob-2"></div>
 
-<div class="login-wrapper">
-    <div class="login-card">
-        <div class="logo-section">
-            <img src="{{ asset('logo-polnep.png') }}" alt="Logo POLNEP" style="height: 80px; width: auto; margin-bottom: 16px; object-fit: contain;">
-            <h4 class="login-title">Poliklinik POLNEP</h4>
-            <p class="login-subtitle">Sistem Informasi Manajemen Pelayanan Medis</p>
+    <div class="login-wrapper">
+        <div class="login-card">
+            <div class="logo-section">
+                <img src="{{ asset('logo-polnep.png') }}" alt="Logo POLNEP"
+                    style="height: 80px; width: auto; margin-bottom: 16px; object-fit: contain;">
+                <h4 class="login-title">Poliklinik POLNEP</h4>
+                <p class="login-subtitle">Sistem Informasi Manajemen Pelayanan Medis</p>
+            </div>
+
+            @if (session('error'))
+                <div class="alert alert-danger" role="alert">
+                    <i data-feather="alert-circle" class="me-2" style="width: 16px; height: 16px;"></i>
+                    {{ session('error') }}
+                </div>
+            @endif
+
+            <form method="POST" action="{{ route('login') }}">
+                @csrf
+
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control @error('username') is-invalid @enderror" id="username"
+                        name="username" value="{{ old('username') }}" placeholder="Masukkan username" required
+                        autofocus>
+                    @error('username')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+
+                <div class="mb-4">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control @error('password') is-invalid @enderror" id="password"
+                        name="password" placeholder="Masukkan password" required>
+                    @error('password')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+
+                <button type="submit" class="btn btn-polnep w-100">
+                    Masuk ke Sistem <i data-feather="arrow-right" class="ms-1" style="width: 16px; height: 16px;"></i>
+                </button>
+            </form>
         </div>
-
-        @if (session('error'))
-            <div class="alert alert-danger" role="alert">
-                <i data-feather="alert-circle" class="me-2" style="width: 16px; height: 16px;"></i> {{ session('error') }}
-            </div>
-        @endif
-
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
-            
-            <div class="mb-3">
-                <label for="username" class="form-label">Username</label>
-                <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username" value="{{ old('username') }}" placeholder="Masukkan username" required autofocus>
-                @error('username')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
-            </div>
-
-            <div class="mb-4">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" placeholder="Masukkan password" required>
-                @error('password')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
-            </div>
-
-            <button type="submit" class="btn btn-polnep w-100">
-                Masuk ke Sistem <i data-feather="arrow-right" class="ms-1" style="width: 16px; height: 16px;"></i>
-            </button>
-        </form>
     </div>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    feather.replace();
-</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        feather.replace();
+    </script>
 </body>
+
 </html>

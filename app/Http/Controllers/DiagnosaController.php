@@ -11,6 +11,7 @@ use App\Models\Resep;
 use App\Models\ResepDetail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class DiagnosaController extends Controller
 {
@@ -51,10 +52,10 @@ class DiagnosaController extends Controller
             'id_pendaftaran' => 'required|exists:pendaftarans,id_pendaftaran',
             'diagnosa_text' => 'required|string',
             'tindakan' => 'required|string',
-            // 'obat_id' => 'nullable|array',
-            // 'obat_id.*' => 'exists:obats,id_obat',
-            // 'jumlah' => 'nullable|array',
-            // 'dosis' => 'nullable|array',
+            'obat_id' => 'nullable|array',
+            'obat_id.*' => 'nullable|exists:obats,id_obat',
+            'jumlah' => 'nullable|array',
+            'dosis' => 'nullable|array',
         ]);
 
         $pendaftaran = Pendaftaran::findOrFail($request->id_pendaftaran);
@@ -72,8 +73,10 @@ class DiagnosaController extends Controller
 
             // 2. Simpan Resep & Detail (Jika ada obat yang diresepkan)
             if ($request->has('obat_id') && count($request->obat_id) > 0) {
-                // Generate Nomor Resep
-                $nomor_resep = 'RSP-' . date('Ymd') . '-' . str_pad(rand(1, 9999), 4, '0', STR_PAD_LEFT);
+                // Generate Nomor Resep berurutan per hari
+                $todayResepCount = Resep::whereDate('created_at', Carbon::today())->count();
+                $nextResep = $todayResepCount + 1;
+                $nomor_resep = 'RSP-' . date('Ymd') . '-' . str_pad($nextResep, 4, '0', STR_PAD_LEFT);
                 
                 $resep = Resep::create([
                     'nomor_resep' => $nomor_resep,
@@ -114,9 +117,7 @@ class DiagnosaController extends Controller
             return redirect()->route('diagnosa.index')->with('success', 'Pemeriksaan Pasien selesai dan Diagnosa/Resep telah disimpan.');
         } catch (\Exception $e) {
             DB::rollBack();
-            // Tampilkan error secara destruktif ke layar (Die & Dump) untuk memudahkan debugging jika transaksi Database gagal:
-            dd($e->getMessage(), $e->getTrace());
-            // return back()->withInput()->withErrors(['error' => 'Gagal menyimpan pemeriksaan: ' . $e->getMessage()]);
+            return back()->withInput()->withErrors(['error' => 'Gagal menyimpan pemeriksaan: ' . $e->getMessage()]);
         }
     }
 

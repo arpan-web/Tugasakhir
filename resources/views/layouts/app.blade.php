@@ -401,6 +401,8 @@
             </li>
             @endif
 
+
+
             @if(in_array(auth()->user()->role, ['admin']))
             <li class="sidebar-header mt-3 text-muted px-3" style="font-size: 0.7rem; letter-spacing: 1px;"><small>LAPORAN MANAJEMEN</small></li>
             <li class="{{ request()->routeIs('laporan.index') ? 'active' : '' }}">

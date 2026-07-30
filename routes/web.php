@@ -41,6 +41,8 @@ Route::middleware('auth')->group(function () {
     // Manajemen Stok Obat Farmasi (Apotek)
     Route::resource('stok_transaksi', StokTransaksiController::class);
 
+
+
     // Modul Laporan (Admin/Leader)
     Route::group(['prefix' => 'laporan', 'as' => 'laporan.'], function () {
         Route::get('/', [App\Http\Controllers\LaporanController::class, 'index'])->name('index');

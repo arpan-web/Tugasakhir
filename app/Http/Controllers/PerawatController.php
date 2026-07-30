@@ -9,8 +9,20 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 
+use Illuminate\Support\Facades\Auth;
+
 class PerawatController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(function ($request, $next) {
+            if (Auth::user() && Auth::user()->role !== 'admin') {
+                abort(403, 'Akses ditolak. Hanya Admin yang dapat mengelola data master Perawat.');
+            }
+            return $next($request);
+        });
+    }
+
     public function index()
     {
         $perawats = Perawat::with('user')->orderBy('created_at', 'desc')->paginate(10);

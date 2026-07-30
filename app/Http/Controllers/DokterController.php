@@ -10,8 +10,20 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 
+use Illuminate\Support\Facades\Auth;
+
 class DokterController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(function ($request, $next) {
+            if (Auth::user() && Auth::user()->role !== 'admin') {
+                abort(403, 'Akses ditolak. Hanya Admin yang dapat mengelola data master Dokter.');
+            }
+            return $next($request);
+        });
+    }
+
     public function index()
     {
         $dokters = Dokter::with(['poli', 'user'])->orderBy('created_at', 'desc')->paginate(10);

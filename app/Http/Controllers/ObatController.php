@@ -6,8 +6,20 @@ use Illuminate\Http\Request;
 
 use App\Models\Obat;
 
+use Illuminate\Support\Facades\Auth;
+
 class ObatController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(function ($request, $next) {
+            if (Auth::user() && Auth::user()->role !== 'admin') {
+                abort(403, 'Akses ditolak. Hanya Admin yang dapat mengelola data master Obat.');
+            }
+            return $next($request);
+        });
+    }
+
     public function index()
     {
         $obats = Obat::orderBy('nama_obat', 'asc')->paginate(10);
