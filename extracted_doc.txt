@@ -1,0 +1,1204 @@
+﻿TUGAS AKHIR
+RANCANG BANGUN SISTEM INFORMASI MANAJEMEN POLIKLINIK BERBASIS WEB (STUDI KASUS: POLIKLINIK POLNEP)
+OLEH :
+ARFAN TRI FADLI
+3202316146
+PROGRAM STUDI D3 TEKNIK INFORMATIKA
+JURUSAN TEKNIK ELEKTRO
+POLITEKNIK NEGERI PONTIANAK
+2026
+HALAMAN PENGESAHAN
+RANCANG BANGUN SISTEM INFORMASI MANAJEMEN POLIKLINIK BERBASIS WEB (STUDI KASUS: POLIKLINIK POLNEP)
+Oleh:
+ARFAN TRI FADLI
+3202316146
+Tugas Akhir ini telah diterima dan disahkan sebagai salah satu syarat untuk menyelesaikan Program Pendidikan Diploma III Program Studi Teknik Informatika Jurusan Teknik Elektro Politeknik Negeri Pontianak. 
+Disahkan oleh :
+Ketua JurusanTeknik ElektroHasan, S.T., M.T.NIP 197108201999031003Ketua JurusanTeknik ElektroHasan, S.T., M.T.NIP 197108201999031003
+Ketua Jurusan
+Teknik Elektro
+Hasan, S.T., M.T.
+NIP 197108201999031003
+Ketua Jurusan
+Teknik Elektro
+Hasan, S.T., M.T.
+NIP 197108201999031003
+Koordinator Program StudiTeknik InformatikaMariana Syamsudin, S.T., M.T., PhD NIP 197503142006042001Koordinator Program StudiTeknik InformatikaMariana Syamsudin, S.T., M.T., PhD NIP 197503142006042001
+Koordinator Program Studi
+Teknik Informatika
+Mariana Syamsudin, S.T., M.T., PhD NIP 197503142006042001
+Koordinator Program Studi
+Teknik Informatika
+Mariana Syamsudin, S.T., M.T., PhD NIP 197503142006042001
+Mengetahui,Direktur Politeknik Negeri PontianakDr. H. Widodo PS, S.T., M.T.NIP197504242000031001Mengetahui,Direktur Politeknik Negeri PontianakDr. H. Widodo PS, S.T., M.T.NIP197504242000031001
+Mengetahui,
+Direktur Politeknik Negeri Pontianak
+Dr. H. Widodo PS, S.T., M.T.
+NIP197504242000031001
+Mengetahui,
+Direktur Politeknik Negeri Pontianak
+Dr. H. Widodo PS, S.T., M.T.
+NIP197504242000031001
+HALAMAN PERNYATAAN
+RANCANG BANGUN SISTEM INFORMASI MANAJEMEN POLIKLINIK BERBASIS WEB (STUDI KASUS: POLIKLINIK POLNEP)
+Oleh:
+Arfan Tri Fadli
+3202316146
+Pembimbing 
+Karfindo
+NIP. 199011292025061002
+Telah dipertahakankan di depan penguji pada tanggal 5 Agustus 2026dan dinyatakan memenuhi syarat sebagai Laporan Tugas Akhir.
+Penguji I
+Mariana Syamsudin, S.T., M.T., PhD NIP 197503142006042001
+Penguji II
+Fitri Wibowo, S.S.T., M.T.         
+NIP198512282015041002
+HALAMAN PERNYATAAN ORISINALITAS
+Saya yang bertanda tangan dibawah ini : 
+Nama: Arfan Tri Fadli
+NIM: 3202316146
+Jurusan / Program Studi: Teknik Elektro/Teknik Informatika
+Judul Tugas Akhir: Rancang Bangun Sistem Informasi Manajemen Poliklinik Berbasis Web (Studi Kasus: Poliklinik Polnep)
+Menyatakan dengan sebenar-benarnya bahwa penulisan Laporan Tugas Akhir ini berdasarkan hasil penelitian, pemikiran dan pemaparan asli dari saya sendiri, baik untuk naskah laporan maupun kegiatan yang tercantum sebagai bagian dari Laporan Tugas Akhir ini. Jika terdapat karya orang lain, saya akan mencantumkan sumber yang jelas.
+Demikian pernyataan ini saya buat dengan sesungguhnya dan apabila dikemudian hari terdapat penyimpangan dan ketidakbenaran dalam pernyataan ini, maka saya bersedia menerima sanksi akademik berupa pencabutan gelar yang telah diperoleh karena karya tulis ini dan sanksi lain sesuai dengan peraturan yang berlaku di Politeknik Negeri Pontianak. 
+Demikian pernyataan ini saya buat dalam keadaan sadar tanpa paksaan dari pihak manapun.   
+Pontianak, 28Agustus 2023
+Yang membuat pernyataan, 
+Materai 10000Materai 10000
+Materai 10000
+Materai 10000
+NAMA
+NIM.
+PROFIL PENULIS
+FOTO 3×4FOTO 3×4
+FOTO 3×4
+FOTO 3×4
+Nama Mahasiswa
+NIM
+Tempat, Tanggal Lahir
+Jenis Kelamin
+Agama
+No. Handphone
+Email
+Alamat
+: Arfan Tri Fadli
+: 3202316146
+: Pontianak, 19 Meri 2001
+: Laki-laki
+: Islam
+: 083125397346
+: Arfantri78@gmail.com
+:
+ABSTRAK
+Abstrak berisikan ringkasan dari LTA Anda, dalam abstrak setidaknya harus memuat hal-hal berikut 
+Masalah: tuliskan masalah yang akan diselesaikan
+Usulan solusi yang di tawarkan: tuliskan solusi dari masalah yang telah Anda definisikan
+Metode: tuliskan metode yang Anda gunakan pada solusi menyelesaikan masalah
+Hasil : tuliskan hasil dari seluruh solusi yang Anda usulkan dan tuliskan hasil pengujian
+Kesimpulan : berisikan ringkasan kesimpulan dari laporan tugas akhir anda. 
+Kata Kunci :berikan kata kunci 3-5 yang menggambarkan tugas akhir anda
+ABSTRACT
+The abstract contains a summary of your LTA, the abstract must at least contain the following things
+Problem: write down the problem to be solved
+Proposed solution: write down the solution to the problem you have defined
+Method: write down the method you used to solve the problem
+Results: write down the results of all the solutions you propose and write down the test results
+Conclusion: contains a summary of the conclusions of your final project report.
+Keywords: provide 3-5 keywords that describe your final project
+PRAKATA
+Puji dan syukur penulis panjatkan atas kehadirat Allah Subhanahu Wa Ta’ala yang telah memberikan rahmat dan karunia-Nya sehingga Tugas Akhir dengan judul “Rancang Bangun Sistem Informasi Manajemen Poliklinik Berbasis Web (Studi Kasus: Poliklinik Polnep)” ini dapat terselesaikan.Pada penyusunan Laporan Tugas Akhir dari awal hingga selesainya laporan ini tidak terlepas dari bantuan berbagai pihak. Oleh karena itu, penulis sangat berterima kasih kepada :
+Kedua orang tua yang memberikan semangat dan dukungan secara moril maupun materil selama berjalannya proses penyusunan Tugas Akhir.
+Bapak Dr.H. Widodo PS, S.T., M.T., selaku Direktur Politeknik Negeri Pontianak.
+Bapak Hasan, S.T., M.T., selaku Ketua Jurusan Teknik Elektro Politeknik Negeri Pontianak.
+IbuMariana Syamsudin, S.T., M.T., PhD selaku Koordinator Program Studi D3 Teknik Informatika Politeknik Negeri Pontianak.
+Bapak Safri Adam, S.Kom., M.Kom. selaku Koordinator Tugas Akhir Program Studi D3 Teknik Informatika Politeknik Negeri Pontianak.
+Bapak Karfindoselaku Dosen Pembimbing yang telah banyak membantu selama proses penyusunan Tugas Akhir ini.
+Ibu Mariana Syamsudin, S.T., M.T., PhD selaku dosen penguji 1 yang telah memberikan kritik dan saran selama proses penyusunan Tugas Akhir ini.
+Bapak Fitri Wibowo, S.S.T., M.T.selaku dosen penguji 2 yang telah memberikan kritik dan saran selama proses penyusunan Tugas Akhir ini.
+Bapak Tommi Suryanto, S.Kom., M.Kom. selaku Kepala Laboratorium Program Studi D3 Teknik Informatika Politeknik Negeri Pontianak yang telah mengizinkan dan membantu penulis dalam memberikan data informasi untuk melakukan studi kasus sebagai bahan untuk menyelesaikan Tugas Akhir ini.
+Seluruh staf pengajar khususnya dosen yang mengajar di Program Studi D-III Teknik Informatika Politeknik Negeri Pontianak yang telah memberikan ilmunya kepada penulis selama mengikuti perkuliahan.
+Semua teman-teman mahasiswa jurusan Teknik Elektro khususnya di Program Studi D3 Teknik Informatika yang bersama-sama berjuang dalam menyelesaikan Tugas Akhir ini.
+Rekan lainnya yang belum disebutkan silakan ditambahkan
+Pada penyusunan Laporan Tugas Akhir ini tentu masih terdapat banyak kekurangan. Oleh karena itu, penulis berharap adanya kritik dan saran yang membangun dari segala pihak demi perbaikan laporan ini dikemudian hari. Semoga laporan ini dapat memberikan manfaat bagi pembaca dan penulis sendiri.
+Pontianak, 28 Agustus 2023PenulisPontianak, 28 Agustus 2023Penulis
+Pontianak, 28 Agustus 2023
+Penulis
+Pontianak, 28 Agustus 2023
+Penulis
+DAFTAR ISI
+Semua daftar isi harus dibuat secara otomatis
+HALAMAN PENGESAHANii
+HALAMAN PERNYATAANiii
+HALAMAN PERNYATAAN ORISINALITASiv
+RIWAYAT HIDUPv
+ABSTRAKvi
+ABSTRACTvii
+PRAKATAviii
+DAFTAR ISIx
+DAFTAR TABELxii
+DAFTAR GAMBARxiii
+BAB I  PENDAHULUAN1
+1.1Latar Belakang1
+1.2Rumusan Masalah1
+1.3Batasan Masalah1
+1.4Tujuan Tugas Akhir1
+1.5Manfaat Tugas Akhir2
+1.6Metodologi Pelaksanaan Tugas Akhir2
+1.7 Sistematika Penulisan3
+BAB II  DASAR TEORI6
+2.1 Tinjauan Pustaka6
+2.2 Dasar Teori7
+BAB III  PERANCANGAN SISTEM9
+3.1 Analisis Kebutuhan Sistem9
+3.2 Arsitektur Sistem10
+3.3 Perancangan Basis Data (Jika Relevan)10
+3.4 Perancangan Antarmuka (UI/UX) (Jika Relevan dan Opsional)11
+3.5 Perancangan Algoritma atau Proses Bisnis (Opsional)11
+3.6 Spesifikasi Teknologi12
+3.7 Rencana Pengujian13
+BAB IV  HASIL DAN PEMBAHASAN14
+4.1 Gambaran Umum Sistem14
+4.2 Implementasi Sistem14
+4.3Pengujian Sistem14
+4.4Analisis Hasil dan Evaluasi15
+BAB V  PENUTUP43
+5.1Kesimpulan43
+5.2Saran43
+DAFTAR PUSTAKA45
+LAMPIRAN48
+DAFTAR TABEL
+Semua daftar tabel harus dibuat secara otomatis
+Tabel 4.1 Persentase Dataset20
+Tabel 4.2 Pengujian Black Box40
+DAFTAR GAMBAR
+Semua daftar gambar harus dibuat secara otomatis
+Gambar 3.1 Rancangan Sistem Pendeteksi Kebakaran14
+Gambar 3.2 Rancangan Model CNN15
+Gambar 3.3 Prinsip Kerja Sistem16
+Gambar 4.1 Aplikasi Pendeteksi Kebekaran Melalui CCTV18
+Gambar 4.2 Running Aplikasi19
+Gambar 4.3 Bot Telegram19
+Gambar 4.4 Image Data Generator22
+Gambar 4.5 Output Image Data Generator22
+Gambar 4.6 Architecture CNN23
+Gambar 4.7 Ringkasan Arsitektur CNN24
+Gambar 4.8 Kode Pelatihan25
+Gambar 4.9 Output Training26
+Gambar 4.10 Visualisasi Data Pelatihan dan Validasi27
+Gambar 4.11 Import Library28
+Gambar 4.12 Kode Pengiriman Notifikasi ke Telegram29
+Gambar 4.13 Kode Deteksi Kebakaran31
+Gambar 4.14 Style App33
+Gambar 4.15 Style App33
+Gambar 4.16 Membuka BotFather35
+Gambar 4. 17 Membuat Bot35
+Gambar 4.18 Token Bot36
+Gambar 4.19 Memulai Bot36
+Gambar 4.20 ID Akun Telegram37
+Gambar 4.21 Output Terminal38
+Gambar 4.22 Aplikasi Pendeteksi Kebakaran38
+BAB I PENDAHULUAN
+Latar Belakang
+Kesehatan merupakan salah satu kebutuhan yang berkaitan dengan aktivitas sehari-hari, termasuk kegiatan di lingkungan perguruan tinggi. Dalam penyelenggaraan pelayanan kesehatan, data pasien, hasil pemeriksaan, pemberian obat, dan laporan pelayanan perlu dicatat sebagai bagian dari kegiatan administrasi. Perkembangan teknologi informasi memungkinkan pencatatan tersebut dilakukan melalui sistem digital, seperti rekam medis elektronik (Electronic Medical Record/EMR), sistem pendaftaran, dan pengelolaan persediaan obat [1][2]. Sistem digital dapat digunakan untuk menyimpan dan mengelola data pelayanan dalam satu sistem sehingga informasi yang dibutuhkan dapat tersedia untuk mendukung kegiatan pelayanan kesehatan [1].
+Politeknik Negeri Pontianak (POLNEP) menyediakan layanan kesehatan bagi sivitas akademika melalui Poliklinik POLNEP. Poliklinik tersebut berada di lingkungan kampus, tepatnya di samping Gedung UPA Bahasa atau Gedung Perpustakaan lama. Pelayanan yang diberikan ditujukan kepada mahasiswa, dosen, dan tenaga kependidikan yang membutuhkan pemeriksaan maupun penanganan kesehatan selama berada di lingkungan kampus.
+Pelayanan di Poliklinik POLNEP melibatkan pasien, perawat, dan dokter. Proses pelayanan dimulai ketika pasien melakukan pendaftaran di loket. Setelah pendaftaran, perawat melakukan pemeriksaan awal berupa pengukuran suhu tubuh, tekanan darah, berat badan, dan tinggi badan. Data pemeriksaan awal kemudian digunakan dalam proses pemeriksaan oleh dokter untuk mencatat kondisi pasien, diagnosis, dan tindakan yang diberikan. Apabila pasien memerlukan obat, dokter membuat resep yang selanjutnya digunakan oleh perawat atau petugas untuk menyiapkan obat. Data kunjungan dan penggunaan obat kemudian direkap oleh admin sebagai bagian dari laporan pelayanan poliklinik.
+Berdasarkan pengamatan awal di Poliklinik POLNEP, pencatatan pada beberapa proses pelayanan masih menggunakan buku dan formulir kertas. Pendaftaran pasien, hasil pemeriksaan, resep, dan data persediaan obat dicatat pada media tersebut. Penggunaan beberapa media pencatatan menyebabkan data pasien dan pelayanan tersimpan pada dokumen yang berbeda. Ketika data riwayat pasien diperlukan kembali, petugas perlu mencari catatan yang sesuai pada dokumen sebelumnya. Pencatatan stok obat juga dilakukan secara terpisah sehingga perubahan jumlah obat perlu diperbarui setiap terjadi penerimaan atau pengeluaran obat. Kondisi tersebut juga berpengaruh pada proses penyusunan laporan karena data dari berbagai catatan perlu dikumpulkan dan direkap kembali.
+Kondisi pencatatan yang ditemukan di Poliklinik POLNEP juga menjadi pembahasan dalam beberapa penelitian mengenai pelayanan kesehatan yang masih menggunakan pencatatan berbasis kertas [3][4]. Penelitian tersebut membahas pengelolaan data rekam medis, persediaan obat, antrean pasien, serta kegiatan administrasi yang masih dilakukan secara manual [4][5]. Penelitian lainnya membahas penggunaan sistem informasi untuk mengelola data pelayanan yang sebelumnya dicatat melalui beberapa media secara terpisah [1][6]. Hal tersebut menjadi salah satu pertimbangan dalam perancangan sistem yang dapat mengelola data pelayanan Poliklinik POLNEP dalam satu sistem.
+Berdasarkan kondisi tersebut, pada tugas akhir ini dirancang Sistem InformasiManajemen Poliklinik Berbasis Web untuk Poliklinik POLNEP. Sistem dirancang untuk menangani pendaftaran dan antrean pasien, pencatatan pemeriksaan dan rekam medis, pembuatan resep, pengelolaan persediaan obat, serta penyusunan laporan. Sistem juga menyediakan notifikasi ketika persediaan obat mencapai batas minimum dan dashboard yang menampilkan data kunjungan serta penggunaan obat dalam bentuk grafik. Antarmuka sistem dirancang responsif agar dapat digunakan melalui komputer maupun perangkat dengan ukuran layar yang berbeda. Seluruh fungsi tersebut ditempatkan dalam satu sistem sehingga data pelayanan Poliklinik POLNEP dapat dikelola berdasarkan kebutuhan masing-masing pengguna.
+Rumusan Masalah
+Berdasarkan latar belakang yang telah diuraikan, maka rumusan masalah dalam tugas akhir ini adalah:
+Bagaimana merancang sistem yang dapat mengotomatisasi proses pendaftaran dan manajemen antrean pasien secara efektif? 
+Bagaimana sistem dapat merekam dan mengelola rekam medis pasien (diagnosis, tindakan, dan resep) secara terstruktur serta mudah ditelusuri? 
+Bagaimana mengimplementasikan mekanisme pengelolaan inventori obat yang meliputi pencatatan transaksi masuk dan keluar serta peringatan stok obat minimal? 
+Batasan Masalah
+Penelitian ini dibatasi agar fokus dan terukur :
+Penelitian ini dilakukan pada poliklinik di lingkungan Politeknik Negeri Pontianak (POLNEP) yang terletak di area kampus utama, tepatnya di sekitar  Unit Pelaksana Akademik (UPA) Bahasa sebagai salah satu fasilitas penunjang kegiatan akademik. Sistem ini dirancang khusus untuk memenuhi kebutuhan operasional pelayanan kesehatan internal bagi mahasiswa, dosen, dan tenaga kependidikan di lingkungan POLNEP.
+Fitur yang dikembangkan dalam system ini meliputi: 
+Manajemen Pendaftaran & Antrean: Proses pendaftaran pasien dan pengelolaan nomor antrean secara otomatis.
+Manajemen Rekam Medis: Pencatatan riwayat kesehatan pasien (anamnesa, diagnosa, dan tindakan) oleh dokter secara digital.
+Manajemen Inventori Obat: Pengelolaan stok obat yang mencakup pencatatan obat masuk, obat keluar, serta fitur notifikasi peringatan jika stok mencapai ambang batas minimal.
+Dashboard Analitik: Visualisasi data kunjungan pasien dan penggunaan obat dalam bentuk grafik real-time untuk memudahkan pemantauan oleh pihak manajemen poliklinik.
+Akses Multi-User: Sistem menyediakan hak akses yang berbeda untuk Admin dan Dokter sesuai dengan fungsinya masing-masing.
+Data yang dikelola dalam sistem ini terbatas pada:
+Data identitas sivitas akademika POLNEP (Mahasiswa dan Staf).
+Data rekam medis pasien yang mencakup keluhan, hasil pemeriksaan fisik dasar, diagnosa, dan catatan resep.
+Data master obat (nama obat, jenis, satuan, dan jumlah stok).
+Data laporan kunjungan harian dan bulanan poliklinik.
+Sistem ini dibangun dengan menggunakan teknologi sebagai berikut:
+Bahasa Pemrograman:PHP.
+Framework: Laravel.
+Database:MySQL sebagai penyimpanan data relasional.
+Frontend: HTML, CSS, JavaScript, dan Bootstrap (untuk memastikan tampilan yang mobile responsive).
+Tujuan Tugas Akhir
+Mengimplementasikan fitur pendaftaran pasien dan manajemen antrean secara otomatis dan efektif. 
+Mengembangkan modul rekam medis yang mampu mencatat diagnosis, tindakan, dan resep secara terstruktur serta mudah ditelusuri. 
+Mengimplementasikan sistem pengelolaan inventori obat yang mencakup pencatatan transaksi masuk dan keluar. 
+Mengembangkan sistem yang mampu menyajikan informasi dalam bentuk dashboard analitik berbasis grafik real-time untuk mendukung proses monitoring dan pengambilan keputusan. 
+Mengimplementasikan fitur notifikasi otomatis untuk memberikan informasi terkait kondisi tertentu seperti stok obat menipis dan status antrean pasien.
+Manfaat Tugas Akhir
+Tugas akhir ini diharapkan memberikan manfaat bagi berbagai pihak, antara lain:
+Bagi Poliklinik POLNEP: memudahkan proses pendaftaran pasien, meningkatkan keterlacakan rekam medis dan resep, serta mempermudah pengelolaan stok obat.
+Bagi pasien dan sivitas akademika: memberikan pelayanan yang lebih cepat, penyimpanan rekam medis yang rapi, serta memudahkan proses tindak lanjut.
+Bagi penulis/mahasiswa: menambah pengalaman praktis dalam pengembangan sistem informasi kesehatan.
+Metodologi Pelaksanaan Tugas Akhir
+Metodologi pelaksanaan tugas akhir ini menggunakan metode Software Development dengan pendekatan System Development Life Cycle(SDLC) model Waterfall. Metode Waterfall ini dipilih karena meiliki tahapan yang terstruktur dan sistematis, sehingga sesuai dengan pengembangan sistem informasi dengan kebutuhan yang sudah jelas dan stabil.
+Tahapan penelitian tugas akhir ini mengikuti metode Waterfall yang terdiri dari lima fase utama yaitu :
+Analisis Kebutuhan (Requirement Analysist)
+Pada tahap ini dilakukan identifikasi dari kebutuhan sistem melalui wawancara dan observasi di poliklinik POLNEP untuk memahami proses sistem yang sedang berjalan, permasalahan yang dihadapi, serta kebutuhan fungsional dan non-fungsional sistem yang kelak akan dibangun.
+Perancangan Sistem (System Design)
+Tahap ini meliputi perancangan arsitektur sistem, pembuatan entity relationship diagram (ERD), serta  perancangan antarmuka  pengguna (User Interface)
+Implementasi (Implementation / Coding) 
+Pada tahap ini akan melakukan pengembangan sistem menggunakan bahasa pemograman PHP dengan framework Laravel dan basis data MySQL. Sesuai dengan hasil perancangan yang telah dibuat.
+Pengujian (Testing)
+Tahap ini melakukan sebuah pengujian fungsionalitas sistem menggunakan metode Blackbox Testing untuk memastikan setiap fitur berjalan sesuai dengan kebutuhan, serta pengujian kepuasan pengguna (User Acceptance Testing).
+Dokumentasi
+Tahap akhir ini dapat meliputi penyusunan dokumentasi sistem berupa user manual, panduan penggunaan, dan dokumentasi teknis untuk mendukung pemeliharaan dan pengembangan sistem di masa mendatang.
+Detail lengkap mengenai metode pengumpulan data, alat dan teknologi yang akan digunakan, serta metode analisis data akan dijelaskan pada BAB III Metode Tugas Akhir
+1.7 Sistematika Penulisan
+Adapun sistematika penulisan Tugas Akhir ini secara garis besarnya terbagi menjadi 5 (lima) bab, sebagai berikut :
+BAB I: PENDAHULUAN
+Bab ini berisi gambaran umum mengenai latar belakang permasalahan yang melatarbelakangi tugas akhir atau pengembangan sistem, rumusan masalah yang ingin diselesaikan, batasan masalah untuk memperjelas ruang lingkup tugas akhir, tujuan yang ingin dicapai, manfaat yang diharapkan, metodologi yang digunakan dalam pengerjaan tugas akhir, serta sistematika penulisan untuk memberikan gambaran struktur laporan.
+BAB II: DASAR TEORI
+Bab ini menguraikan konsep, teori, serta referensi yang mendukung pengembangan atau penelitian yang dilakukan. Teori yang dijelaskan dapat mencakup teknologi yang digunakan, algoritma yang diterapkan, metode pengembangan, dan perangkat yang digunakan dalam tugas akhir.
+BAB III: PERANCANGAN SISTEM
+Bab ini menjelaskan tahapan perancangan dari sistem atau solusi yang dikembangkan. Uraian dapat mencakup analisis kebutuhan, desain sistem, arsitektur perangkat lunak, diagram alur, perancangan antarmuka pengguna, serta metode yang digunakan dalam implementasi sistem.
+BAB IV: HASIL DAN PEMBAHASAN
+Bab ini berisi hasil dari implementasi sistem atau eksperimen yang dilakukan. Pembahasan mencakup hasil pengujian, analisis performa sistem, serta perbandingan dengan metode atau teknologi lain jika diperlukan. Evaluasi dilakukan berdasarkan data yang diperoleh untuk mengetahui apakah sistem yang dikembangkan telah memenuhi tujuan yang ditetapkan.
+BAB V: PENUTUP
+Bab ini berisi kesimpulan dari tugas akhir atau pengembangan yang telah dilakukan serta saran untuk pengembangan lebih lanjut. Kesimpulan harus berdasarkan hasil yang telah dibahas sebelumnya, sedangkan saran dapat berupa perbaikan, pengembangan lanjutan, atau penelitian lebih lanjut yang dapat dilakukan di masa mendatang.
+BAB IIDASAR TEORI
+2.1 Tinjauan Pustaka
+Ringkasan Penelitian Terdahulu
+Penelitian pertama dilakukan oleh Rano Agustino dkk. (2022) dengan judul “Perancangan Sistem Informasi Manajemen Klinik Berbasis Web dengan Menggunakan Metode System Development Life Cycle”. Penelitian ini bertujuan untuk merancang sistem informasi manajemen klinik berbasis web guna membantu proses administrasi dan pengelolaan data klinik secara efisien. Metode yang digunakan adalah System Development Life Cycle(SDLC) dengan model Waterfall, di mana hasil penelitian menunjukkan bahwa sistem tersebut berhasil mempermudah pengelolaan data pasien, dokter, apotek, dan laporan klinik. Namun, sistem ini masih memiliki kekurangan, yaitu belum tersedianya fitur notifikasi otomatis dan tampilan antarmuka yang belum mobile-friendly.
+Penelitian kedua dilakukan oleh Hadi Irwan Nasrullah (2023) yang berjudul “Perancangan Sistem Informasi Manajemen Pasien Berbasis Web Pada Klinik Pratama Hijau Putih 9”. Tujuan penelitian ini adalah membangun sistem informasi yang membantu proses pendaftaran dan pengelolaan data pasien di klinik tersebut menggunakan model Waterfall. Hasil penelitian menunjukkan bahwa sistem mampu mempercepat proses registrasi dan mengurangi kesalahan input data. Meski demikian, sistem ini memiliki batasan karena belum mencakup fitur antrean online serta belum mendukung akses optimal melalui perangkat seluler.
+Penelitian ketiga dilakukan oleh Gani dkk. (2019) dengan judul “Rancang Bangun Sistem Informasi Pelayanan Pasien dan Pengelolaan Obat di Poliklinik Politeknik Negeri Padang Berbasis Web”. Penelitian ini bertujuan untuk mengatasi kendala pencatatan manual pada poliklinik kampus yang menyebabkan lambatnya proses pencarian data rekam medis dan ketidakteraturan stok obat. Serupa dengan penelitian sebelumnya, metode yang digunakan adalah Waterfall dengan teknologi PHP dan MySQL. Hasil penelitian menunjukkan bahwa sistem mampu mempercepat pendaftaran dan memberikan akurasi pemantauan stok obat, namun belum dilengkapi dengan fitur dashboard visualisasi grafik dan notifikasi otomatis untuk stok kritis.
+Berdasarkan ketiga penelitian tersebut, dapat disimpulkan bahwa pengembangan sistem informasi manajemen poliklinik berbasis web efektif dalam meningkatkan efisiensi pelayanan. Namun, masih terdapat celah pengembangan berupa kebutuhan akan fitur notifikasi otomatis, visualisasi data yang lebih informatif melalui dashboard, serta optimasi tampilan yang responsif pada perangkat mobile. Oleh karena itu, penelitian ini hadir untuk mengembangkan sistem yang lebih terintegrasi dengan tambahan fitur notifikasi, dashboard analitik grafik real-time, dan tampilan mobile responsive guna memberikan kenyamanan lebih bagi pengguna.
+Analisis Perbandingan
+Tabel 2.1 Contoh Tabel Perbandingan
+No
+Aspek
+Penelitian 1 (Rano Agustino, 2022)
+Penelitian 2 (Hadi Irwan, 2023)
+Penelitian 3 (Gani dkk., 2019)
+ Sistem yang Disusulkan
+1
+Teknologi
+Web-based (PHP, MySQL
+Web-based (PHP, MySQL)
+Web-based (PHP, MySQL)
+Web-based Mobile Responsive, notifikasi alert 
+2
+Fitur Utama
+Manajemen data pasien, dokter, obat, laporan klinik
+Pendaftaran pasien, laporan pasien, pengelolaan data dokter dan obat
+Rekam medis & stok obat
+Manajemen pasien, dokter, obat, rekam medis, laporan, notifikasi otomatis
+3
+Metode 
+SDLC (Waterfall)
+SDLC (Waterfall)
+SDLC (Waterfall)
+SDLC (Waterfall)
+4
+Keterbatasan
+Belum ada fitur notifikasi dan belum mobile-friendly
+Belum ada notifikasi otomatis dan akses mobile
+Belum ada grafik & notifikasi stok
+Mengatasi kekurangan sebelumnya 
+yaitu notifikasi alert & tampilan responsif
+5
+Hasil yang Dicapai
+Sistem membantu administrasi klinik dan mempercepat pencatatan data
+Sistem mempercepat pelayanan dan mengurangi kesalahan input data
+Stok obat lebih akurat
+Sistem terintegrasi dengan notifikasi real-time dan mendukung akses mobile
+Kebaruan Sistem yang Diusulkan
+Kebaruan dari sistem yang diusulkan dalam penelitian ini terletak pada pengembangan fitur layanan yang lebih terintegrasi dibandingkan dengan penelitian sebelumnya. Sistem informasi manajemen poliklinik yang dikembangkan tidak hanya berfungsi untuk mengelola data administrasi, rekam medis, dan inventori obat, tetapi juga dirancang untuk mendukung proses pelayanan kesehatan secara lebih efektif dan terorganisir.
+Selain itu, sistem dirancang dengan tampilan antarmuka yang mobile responsive, sehingga dapat diakses melalui berbagai perangkat seperti komputer, laptop, maupun smartphone. Hal ini memberikan kemudahan bagi petugas poliklinik dalam mengelola data serta meningkatkan fleksibilitas dalam penggunaan sistem.
+Kebaruan lainnya adalah penerapan dashboard analitik berbasis visualisasi grafik secara real-time yang menampilkan informasi penting seperti jumlah kunjungan pasien, data diagnosa penyakit, serta penggunaan obat. Fitur ini membantu pihak poliklinik dalam melakukan monitoring operasional serta mendukung proses pengambilan keputusan secara lebih cepat dan akurat.
+Dengan adanya fitur tersebut, sistem yang diusulkan diharapkan mampu meningkatkan efisiensi pengelolaan data serta kualitas pelayanan kesehatan di Poliklinik POLNEP.
+2.2 Dasar Teori
+Dasar teori berisi konsep, teori, atau prinsip-prinsip ilmiah yang mendukung tugas akhir. Bagian ini menjelaskan landasan teoritis yang digunakan untuk merancang sistem atau menjawab rumusan masalah. Contoh struktur dasar teori sebagai berikut: 
+Konsep Dasar
+1. Sistem Informasi
+Sistem informasi merupakan suatu kesatuan yang terdiri dari berbagai komponen yang saling berkaitan, seperti manusia (brainware), perangkat keras (hardware), perangkat lunak (software), data, dan prosedur. Komponen-komponen tersebut bekerja sama untuk mengumpulkan, mengolah, menyimpan, dan menyajikan data menjadi informasi yang berguna. Informasi yang dihasilkan digunakan untuk mendukung pengambilan keputusan serta pengendalian dalam suatu organisasi. Dengan adanya sistem informasi, proses pengelolaan data dapat dilakukan secara lebih efektif, efisien, dan terstruktur [7].
+2. Manajemen Poliklinik
+Manajemen poliklinik merupakan proses pengelolaan seluruh kegiatan pelayanan kesehatan yang dilakukan di lingkungan poliklinik. Kegiatan ini meliputi pendaftaran pasien, pengelolaan rekam medis, pengaturan jadwal dokter, pelayanan pemeriksaan pasien, pemberian resep obat, pengelolaan stok obat, serta pembuatan laporan kegiatan klinik. Manajemen yang baik sangat penting untuk memastikan pelayanan kesehatan berjalan dengan lancar, meningkatkan kualitas pelayanan, serta mempermudah tenaga medis dalam menjalankan tugasnya [8].
+3. Sistem Berbasis Web
+Sistem berbasis web adalah sistem yang dapat diakses melalui browser dengan memanfaatkan jaringan internet atau intranet. Sistem ini tidak memerlukan instalasi khusus pada perangkat pengguna sehingga dapat digunakan secara fleksibel dari berbagai perangkat seperti komputer, laptop, tablet, maupun smartphone. Dengan sistem berbasis web, pengguna dapat mengakses informasi kapan saja dan di mana saja, sehingga sangat mendukung mobilitas dan efisiensi dalam penggunaan sistem [9].
+4. Basis Data (Database)
+Basis data merupakan kumpulan data yang tersusun secara sistematis dan terorganisir sehingga dapat dengan mudah diakses, dikelola, dan diperbarui. Data dalam basis data disimpan dalam bentuk tabel yang terdiri dari baris (record) dan kolom (field), serta memiliki kunci utama (primary key) sebagai identitas unik dan kunci tamu (foreign key) sebagai penghubung antar tabel. Dalam sistem informasi poliklinik, basis data digunakan untuk menyimpan berbagai informasi penting seperti data pasien, dokter, pendaftaran, diagnosa, resep, dan obat. Penggunaan basis data yang baik dapat meningkatkan keakuratan data, mempercepat proses pencarian, serta mengurangi terjadinya duplikasi data[6].
+5. Entity Relationship Diagram(ERD)
+(ERD) merupakan model yang digunakan untuk menggambarkan hubungan antar entitas dalam suatu sistem basis data. ERD terdiri dari entitas, atribut, dan relasi yang saling terhubung. Entitas merupakan objek utama dalam sistem seperti pasien, dokter, dan obat, sedangkan atribut merupakan informasi yang menjelaskan entitas tersebut. Relasi digunakan untuk menunjukkan hubungan antar entitas. Dengan adanya ERD, perancangan database menjadi lebih terstruktur dan sistematis, sehingga memudahkan dalam proses implementasi system[6].
+6. Rekam Medis
+Rekam medis adalah kumpulan data dan informasi yang berisi identitas pasien, riwayat penyakit, hasil pemeriksaan, diagnosa, tindakan medis, serta pengobatan yang diberikan kepada pasien. Rekam medis berfungsi sebagai dokumentasi resmi yang dapat digunakan sebagai acuan dalam proses pelayanan kesehatan selanjutnya. Selain itu, rekam medis juga membantu tenaga medis dalam memahami kondisi pasien secara menyeluruh serta mendukung pengambilan keputusan medis yang tepat.
+7. User dan Hak Akses
+User merupakan individu yang menggunakan sistem, seperti admin, dokter, dan perawat. Setiap user memiliki peran dan tanggung jawab yang berbeda dalam sistem. Oleh karena itu, diperlukan pengaturan hak akses (role-based access control) untuk membatasi akses pengguna terhadap fitur-fitur tertentu. Admin bertugas mengelola data dan laporan, dokter bertugas menginput diagnosa dan resep, sedangkan perawat bertugas melakukan pendaftaran pasien. Pengaturan hak akses ini bertujuan untuk menjaga keamanan data serta memastikan bahwa setiap pengguna hanya dapat mengakses fitur sesuai dengan tugas dan tanggung jawabnya.
+Teori Pendukung
+1. System Development Life Cycle (SDLC)
+System Development Life Cycle (SDLC) merupakan metode pengembangan sistem yang digunakan untuk merancang dan membangun sistem informasi secara terstruktur dan sistematis. Metode ini terdiri dari beberapa tahapan, yaitu analisis kebutuhan, perancangan sistem (design), implementasi (coding), pengujian (testing), dan pemeliharaan (maintenance) [7]. Tahapan-tahapan tersebut dilakukan secara berurutan agar sistem yang dikembangkan sesuai dengan kebutuhan pengguna serta dapat meminimalkan kesalahan dalam proses pengembangan.
+2. Manajemen Informasi dalam Pelayanan Kesehatan
+Manajemen informasi dalam pelayanan kesehatan menekankan pentingnya pengelolaan data yang akurat, relevan, dan tepat waktu. Informasi yang dihasilkan harus memiliki tingkat keandalan yang tinggi, mudah diakses, serta aman dari kesalahan maupun kehilangan data [8]. Hal ini sangat penting karena tenaga medis seperti dokter dan perawat membutuhkan informasi yang cepat dan tepat dalam mengambil keputusan terkait diagnosis dan pengobatan pasien.
+3. Keamanan Sistem Informasi
+Keamanan sistem informasi merupakan aspek penting dalam pengembangan sistem, terutama dalam sistem yang mengelola data sensitif seperti data pasien. Sistem harus mampu menjaga kerahasiaan data (confidentiality), memastikan keutuhan data (integrity), serta menjamin ketersediaan data (availability) [9]. Oleh karena itu, diperlukan mekanisme keamanan seperti autentikasi pengguna, pengaturan hak akses, serta perlindungan terhadap serangan yang dapat mengancam sistem.
+Teknologi yang Digunakan
+1. PHP
+PHP adalah bahasa pemrograman yang digunakan untuk menjalankan proses di sisi server. Bahasa ini berfungsi untuk mengelola logika aplikasi seperti memproses data dari pengguna, menghubungkan sistem dengan database, serta menghasilkan output berupa halaman web yang akan ditampilkan di browser. PHP bekerja sebelum halaman dikirim ke pengguna, sehingga pengguna hanya menerima hasil akhirnya saja [5].
+2. Laravel
+Laravel merupakan framework berbasis PHP yang digunakan untuk mempermudah proses pengembangan aplikasi web. Laravel menyediakan struktur kerja yang terorganisir dengan konsep Model-View-Controller(MVC), sehingga pemisahan antara logika program, tampilan, dan data menjadi lebih jelas. Selain itu, Laravel juga menyediakan berbagai fitur bawaan seperti routing, autentikasi, dan keamanan yang membantu developer membangun sistem dengan lebih cepat dan efisien[8][15].
+3. HTML
+HTML adalah bahasa markup yang digunakan untuk membangun struktur dasar dari sebuah halaman web. HTML berfungsi untuk menentukan elemen-elemen yang akan ditampilkan, seperti teks, gambar, tabel, dan form input. HTML tidak memiliki kemampuan untuk mengolah data atau membuat interaksi, melainkan hanya sebagai kerangka utama dalam pembuatan tampilan web[11].
+4. CSS
+CSS adalah bahasa yang digunakan untuk mengatur tampilan visual dari halaman web yang dibuat menggunakan HTML. CSS berfungsi untuk menentukan desain seperti warna, ukuran teks, jarak antar elemen, serta tata letak halaman. Dengan CSS, tampilan web menjadi lebih menarik, rapi, dan konsisten di berbagai perangkat[12].
+5. JavaScript
+JavaScript adalah bahasa pemrograman yang digunakan untuk memberikan interaksi pada halaman web di sisi client(browser). JavaScript memungkinkan halaman web menjadi dinamis, seperti melakukan validasi input, menampilkan notifikasi, serta mengubah tampilan secara langsung tanpa perlu memuat ulang halaman. Dengan JavaScript, pengalaman pengguna menjadi lebih interaktif dan responsive[13].
+6. Bootstrap
+Bootstrap merupakan frameworkCSS yang digunakan untuk mempercepat pembuatan tampilan antarmuka. Bootstrap menyediakan berbagai komponen siap pakai seperti tombol, form, tabel, dan navigasi, sehingga developer tidak perlu membuat desain dari awal. Selain itu, Bootstrap mendukung desain responsif yang memungkinkan tampilan web menyesuaikan berbagai ukuran layar perangkat[9].
+7. MySQL
+MySQL adalah sistem manajemen basis data yang digunakan untuk menyimpan dan mengelola data secara terstruktur. MySQL memungkinkan penyimpanan data dalam bentuk tabel yang saling berelasi, sehingga memudahkan dalam proses pengolahan dan pencarian data. Dalam sistem ini, MySQL digunakan untuk menyimpan data pasien, dokter, pendaftaran, diagnosa, resep, serta stok obat[10].
+8. Laragon
+Laragon merupakan software yang digunakan sebagai server lokal (localhost) dalam proses pengembangan aplikasi web. Software ini menyediakan layanan seperti Apache sebagai web server dan MySQL sebagai database server. Dengan menggunakan XAMPP atau Laragon, developer dapat menjalankan dan menguji sistem secara lokal sebelum dipublikasikan ke server online.
+Hubungan dengan Tugas Akhir
+Berdasarkan konsep dan teori pendukung yang telah dijelaskan, sistem informasi manajemen poliklinik yang diusulkan akan dikembangkan dengan menerapkan metode SDLC (System Development Life Cycle) agar proses pengembangan berjalan secara sistematis, mulai dari tahap analisis kebutuhan hingga pemeliharaan sistem.
+Sistem ini dirancang untuk mendukung kegiatan operasional poliklinik, yang meliputi pendaftaran pasien, manajemen antrean, pengelolaan rekam medis (diagnosis, tindakan, dan resep), serta pengelolaan inventori obat. Selain itu, sistem juga dilengkapi dengan kontrol akses berbasis peran (admin dan dokter) guna menjaga keamanan dan keteraturan dalam penggunaan sistem.
+Pemanfaatan teknologi berbasis web memungkinkan sistem dapat diakses secara fleksibel melalui berbagai perangkat, sehingga meningkatkan efisiensi pelayanan dan kemudahan dalam pengelolaan data. Dengan dukungan teknologi seperti PHP, Laravel, MySQL, serta antarmuka berbasis HTML, CSS, dan JavaScript, sistem diharapkan mampu memberikan solusi yang efektif, terintegrasi, dan sesuai dengan kebutuhan operasional poliklinik POLNEP.
+BAB III PERANCANGAN SISTEM
+3.1 Analisis Kebutuhan Sistem
+Bagian ini menjelaskan kebutuhan sistem yang akan dibangun, baik kebutuhan fungsional maupun non-fungsional.
+Kebutuhan Fungsional:
+Fitur-fitur utama yang akan dimiliki sistem, sebagai berikut:
+Manajemen Data Master: sistem harus mampu dalam mengelola data master (data obat, data dokter dan data poli)
+Pendaftaran Pasien: sistem harus dapat menyediakan fitur untuk mendaftar pasien baru dan mencatat kunjungan pasien
+Pencatatan Diagnosa dan Pengobatan: sistem harus dapat memungkinkan mencatat diagnosa dan resep obat untuk pasien 
+Manajemen Stok Obat: sistem harus dapat mencatat setiap stok obat yang masuk dan keluar serta dapat memberikan peringatan atau pengingat jika stok obat hampir habis
+Autentikasi Pengguna: sistem harus menyediakan fitur login pengguna dan logout untuk mengamankan akses data berdasarkan (admin, dokter)
+Pembuatan Laporan: sistem harus dapat menghasilkan laporan -laporan rutin, seperti:
+Laporan kunjungan pasien (harian, mingguan dan bulanan)
+Laporan penggunaan obat 
+Laporan diagnosa penyakit pasien
+Kebutuhan Non-Fungsional:
+(Usability/Interface)Sistem harus memiliki antarmuka yang sederhana, konsisten, dan mudah dipahami sehingga pengguna dapat mengoperasikan setiap fitur tanpa mengalami kesulitan.
+(Reliability)Sistem harus mampu menjalankan setiap fungsi secara konsisten tanpa mengalami kesalahan yang dapat mengganggu proses pelayanan di Poliklinik POLNEP.
+(Security)Data pasien dan transaksi obat harus terlindungi dalam sistem. Hanya pengguna yang terdaftar dan memiliki kredensial yang valid yang dapat mengakses sistem. Data sensitif, seperti diagnosis dokter dan rekam medis, harus disimpan dengan aman. 
+(Performance)Sistem harus mampu memproses pencarian, penyimpanan, dan penampilan data pasien, rekam medis, serta stok obat dengan cepat agar pelayanan di poliklinik tidak mengalami keterlambatan.
+(Safety)Sistem harus membantu meminimalkan kesalahan input data pasien melalui validasi data sebelum disimpan..
+3.2 Arsitektur Sistem
+Menjelaskan gambaran umum sistem secara keseluruhan, termasuk komponen-komponen utama dan hubungan antar komponen.
+Diagram Arsitektur
+Diagram arsitektur berikut menjadi gambaran struktur utama sistem, yang dimulai dari interaksi pengguna (admin dan dokter), antaramuka web (front-end), logika aplikasi (back-end), hingga dengan penyimpanan data (database server).
+Penjelasan Komponen:
+Berikut penjelasan fungsi dari setiap komponen utama yang ada di sistem :
+a) Pengguna Sistem
+Pengguna sistem merupakan pihak yang memiliki hak akses untuk menggunakan aplikasi melalui web browser. Sistem menyediakan dua jenis pengguna, yaitu:
+1) Admin
+Admin bertanggung jawab mengelola seluruh data yang terdapat pada sistem. Tugas admin meliputi:
+Login ke sistem.
+Mengelola data master (pasien, dokter, poli, dan obat).
+Melakukan pendaftaran pasien.
+Mengelola data stok obat.
+Melihat serta mencetak laporan kunjungan pasien, diagnosa, dan penggunaan obat.
+2) Dokter
+Dokter bertugas memberikan pelayanan medis kepada pasien melalui sistem. Tugas dokter meliputi:
+Login ke sistem.
+Melakukan pemeriksaan pasien.
+Menginput hasil diagnosa.
+Menentukan tindakan medis.
+Membuat resep obat sesuai hasil pemeriksaan.
+b) Browser
+Browser merupakan media yang digunakan oleh pengguna untuk mengakses aplikasi melalui jaringan internet atau intranet. Pada penelitian ini, sistem dapat dijalankan menggunakan browser seperti Google Chrome, Microsoft Edge, Mozilla Firefox, maupun browser modern lainnya.
+c) Front-End (Blade + Bootstrap)
+Front-end merupakan bagian sistem yang berfungsi sebagai antarmuka (user interface) yang digunakan pengguna untuk berinteraksi dengan aplikasi melalui web browser. Pada penelitian ini, front-end dikembangkan menggunakan Blade Template sebagaitemplate engine Laravel dan Bootstrap sebagai framework CSS sehingga tampilan sistem responsif, konsisten, dan mudah digunakan[8][9].
+Fitur utama yang tersedia pada front-end meliputi:
+Form login pengguna.
+Form pendaftaran pasien.
+Halaman pemeriksaan dokter.
+Form resep obat.
+Dashboard dan laporan harian.
+Notifikasi stok obat minimum.
+d) Back-End (Laravel Framework)
+Back-end merupakan bagian sistem yang bertugas menangani seluruh proses bisnis, logika aplikasi, serta pengolahan data. Pada penelitian ini, back-end dikembangkan menggunakan Framework Laravel yang menerapkan arsitektur Model-View-Controller (MVC)[8][9].
+Komponen utama pada back-end meliputi:
+Route, menerima setiap permintaan (request) dari pengguna dan mengarahkannya ke controller yang sesuai.
+Controller, mengelola logika aplikasi dan memproses data dari pengguna.
+Authentication, menangani proses login, logout, serta pengaturan hak akses pengguna.
+Business Logic, menjalankan proses bisnis seperti pendaftaran pasien, pemeriksaan, pengelolaan stok obat, dan pembuatan laporan.
+Model (Eloquent ORM), menghubungkan aplikasi dengan database serta melakukan proses pengambilan, penyimpanan, pembaruan, dan penghapusan data.
+e) Database Server (MySQL)
+Database Server menggunakan MySQL sebagai sistem manajemen basis data relasional yang berfungsi menyimpan seluruh data master maupun data transaksi sistem secara terstruktur[10].
+Data yang disimpan meliputi tabel USER, PASIEN, DOKTER, POLI, JADWAL_DOKTER, PENDAFTARAN, DIAGNOSA, RESEP, RESEP_DETAIL, OBAT, STOK_TRANSAKSI, NOTIFIKASI, dan CATATAN_HARIAN_OBAT.
+Database MySQL memastikan seluruh data seperti pendaftaran pasien, hasil pemeriksaan, diagnosa, resep obat, transaksi stok, hingga laporan tersimpan secara aman, konsisten, dan dapat diakses oleh aplikasi melalui Model (Eloquent ORM).
+3.3 Perancangan Basis Data (Jika Relevan)
+Bagian ini menjelaskan desain database yang akan digunakan, termasuk struktur tabel dan relasi antar tabel.
+Entity Relationship Diagram (ERD):
+ERD ini digunakan untuk menggambarkan hubungan antar entitas dalam sistem informasi manajemen poliklinik, sistem ini memiliki beberapa entitas utama yaitu pasien, user, dokter, perawat, poli, pendaftaran, diagnosa, resep, dan obat. Dapat terlihat pada gambar 3.3 berikut.
+Berdasarkan diagram yang ditampilkan diatas, setiap pasien dapat melakukan lebih dari satu kali pendaftaran. Setiap pendaftaran memiliki satu atau lebih diagnosa yang dibuat oleh dokter. Diagnosa dapat menghasilkan resep yang berisi satu atau beberapa jenis obat. Hubungan antar entitas ini dirancang agar proses pencatatan pasien, pemeriksaan, dan manajemen stok obat dapat terintegrasi secara efektif dan efisien.
+Struktur Tabel:
+Tabel Pasien 
+Table 3. 1 Tabel Pasien
+Nama Field
+Tipe Data
+Keterangan
+id_pasien (PK)
+INT
+Primary key, auto increment
+nomor_pasien
+VARCHAR(10)
+Nomor unik pasien (contohnya : P001)
+nama_lengkap
+VARCHAR(100)
+Nama lengkap pasien
+jenis_kelamin
+ENUM(‘L’,’P’)
+Jenis kelamin pasien
+tanggal_lahir
+DATE
+Tanggal Lahir Pasien
+alamat
+TEXT
+Alamat tempat tinggal pasien
+no_hp
+VARCHAR(12)
+Alamat tempat tinggal pasien
+Status_pasien
+ENUM (‘Polnep’,’Umum’)
+Status keanggotaan pasien
+nomor_kartu_pasien
+VARCHAR(20)
+Nomor kartu pasien (jika ada)
+created_at
+DATETIME
+Waktu data dibuat
+Tabel User
+Table 3. 2 Tabel User
+Nama Field
+Tipe Data
+Keterangan
+id_user (PK)
+INT
+Primary key, auto increment
+nama_user
+VARCHAR(100)
+Nama pengguna sistem
+username
+VARCHAR(50)
+Username unik untuk login
+password
+VARCHAR(255)
+Password yang disimpan secara terenkripsi
+role
+ENUM(‘admin’,’dokter’,’perawat’)
+Hak akses penggunaan sistem
+status
+ENUM(‘aktif’,’nonaktif’)
+Status akun pengguna
+Last_login
+DATETIME
+Waktu terakhir login
+created_at
+DATETIME
+Waktu data dibuat
+Tabel Pendaftaran
+Table 3. 3 Tabel Pendaftaran
+Nama Field
+Tipe Data
+Keterangan
+id_pendaftaran (PK)
+INT
+Primary key, auto increment
+nomor_pendaftaran
+VARCHAR(20)
+Nomor unik registration (contohnya : REG20250115001)
+tanggal_daftar
+DATETIME
+Tanggal dan waktu pendaftaran
+keluhan
+TEXT
+Keluhan pasien
+no_antrian
+INT
+Nomor urutan pasien
+suhu_tubuh
+DECIMAL(4,1)
+Suhu tubuh pasien
+berat_badan
+DECIMAL(5,2)
+Berat badan pasien
+tinggi_badan
+DECIMAL(5,2)
+Tinggi badan pasien
+status_pendaftaran
+ENUM('baru','diproses','selesai','batal')
+Status proses pendaftaran
+id_pasien (FK)
+INT
+Relasi ke tabel pasien
+id_poli (FK)
+INT
+Relasi ke tabel poli
+id_dokter (FK)
+INT
+Relasi ke tabel dokter
+id_perawat (FK)
+INT
+Relasi ke tabel perawat
+id_user (FK)
+INT
+Relasi ke tabel user (petugas input)
+created_at
+DATETIME
+Waktu data dibuat
+updated_at
+DATETIME
+Waktu data diperbarui
+Table Diagnosa 
+Table 3. 4 Tabel Diagnosa
+Nama Field
+Tipe Data
+Keterangan
+id_diagnosa (PK)
+INT
+Primary key, auto increment
+diagnosa_text
+TEXT
+Hasil diagnosa dokter
+tindakan
+TEXT
+Tindakan medis yang diberikan
+tanggal_periksa
+DATETIME
+Tanggal pemeriksaan dilakukan
+id_pendaftaran (FK)
+INT
+Relasi ke tabel pendaftaran
+id_dokter (FK)
+INT
+ Relasi ke tabel dokter
+created _at
+DATETIME
+Waktu data dibuat
+Table Resep
+Table 3. 5 Tabel Resep
+Nama Field
+Tipe Data
+Keterangan
+id_resep(PK)
+INT
+Primary key, auto increment
+nomor_resep
+VARCHAR(20)
+Nomor resep unik (misal: RSP20250115001)
+tanggal_resep
+DATETIME
+Tanggal resep dibuat
+id_diagnosa (FK)
+INT
+Relasi ke tabel diagnosa
+id_dokter (FK)
+INT
+Relasi ke tabel dokter
+Table Obat
+Table 3. 6 Tabel Obat
+Nama Field
+Tipe Data
+Keterangan
+id_obat(PK)
+INT
+Primary key, auto increment
+kode_obat
+VARCHAR(10)
+Kode unik obat (contoh: OBT001)
+nama_obat
+VARCHAR(100)
+Nama obat
+Satuan
+ENUM('tablet','kapsul','botol','sachet')
+Satuan obat
+stok_tersedia
+INT
+Jumlah stok saat ini
+stok_minimal
+INT
+Jumlah stok minimal sebelum sistem memberi peringatan
+keterangan
+TEXT
+Keterangan tambahan terkait obat
+created _at
+DATETIME
+Waktu data dibuat
+updated _at
+DATETIME
+Waktu data diperbarui
+Tabel Notifikasi
+Table 3. 7 Tabel Notifikasi
+Nama Field
+Tipe Data
+Keterangan
+id_notif (PK)
+INT
+Primary key, auto increment
+pesan
+TEXT
+Isi pesan notifikasi
+tipe
+ENUM('stok','antrian')
+Jenis notifikasi
+status
+ENUM('belum_dibaca','dibaca')
+Status notifikasi
+Table Dokter
+Table 3. 8 Tabel Dokter
+Nama Field
+Tipe Data
+Keterangan
+id_dokter (PK)
+INT
+Primary key, auto increment
+nama_dokter
+VARCHAR(100)
+Nama lengkap dokter
+spesialis
+VARCHAR(100)
+Spesialisasi dokter
+no_hp
+VARCHAR(15)
+Nomor telepon dokter
+created_at
+DATETIME
+Waktu data dibuat
+updated_at
+DATETIME
+Waktu data diperbarui
+Tabel Poli
+Table 3. 9 Tabel Poli
+Nama Field
+Tipe Data
+Keterangan
+id_poli (PK)
+INT
+Primary key, auto increment
+nama_poli
+VARCHAR(100)
+Nama poli
+keterangan
+TEXT
+Deskripsi poli
+created_at
+DATETIME
+Waktu data dibuat
+updated_at
+DATETIME
+Waktu data diperbarui
+Table Jadwal Dokter
+Table 3. 10 Tabel Jadwal Dokter
+Nama Field
+Tipe Data
+Keterangan
+id_jadwal (PK)
+INT
+Primary key, auto increment
+id_dokter (FK)
+INT
+Relasi ke tabel dokter
+id_poli (FK)
+INT
+Relasi ke tabel poli
+hari
+ENUM('Senin','Selasa','Rabu','Kamis','Jumat','Sabtu')
+Hari praktik
+jam_mulai
+TIME
+Jam mulai praktik
+jam_selesai
+TIME
+Jam selesai praktik
+created_at
+DATETIME
+Waktu data dibuat
+Tabel Resep Detail
+Table 3. 11 Tabel Resep Detail
+Nama Field
+Tipe Data
+Keterangan
+id_detail (PK)
+INT
+Primary key, auto increment
+id_resep (FK)
+INT
+Relasi ke tabel resep
+id_obat (FK)
+INT
+Relasi ke tabel obat
+jumlah
+INT
+Jumlah obat
+aturan_pakai
+VARCHAR(100)
+Aturan penggunaan obat
+created_at
+DATETIME
+Waktu data dibuat
+Tabel Stok Transaksi
+Table 3. 12 Tabel Stok Transaksi
+Nama Field
+Tipe Data
+Keterangan
+id_transaksi (PK)
+INT
+Primary key, auto increment
+id_obat (FK)
+INT
+Relasi ke tabel obat
+jenis_transaksi
+ENUM('masuk','keluar')
+Jenis transaksi stok
+jumlah
+INT
+Jumlah perubahan stok
+tanggal
+DATETIME
+Waktu transaksi
+keterangan
+TEXT
+Catatan tambahan
+Tabel Catatan Harian Obat
+Table 3. 13 Tabel Catatan Harian Obat
+Nama Field
+Tipe Data
+Keterangan
+id_catatan (PK)
+INT
+Primary key, auto increment
+id_obat (FK)
+INT
+Relasi ke tabel obat
+tanggal
+DATE
+Tanggal pencatatan
+stok_awal
+INT
+Stok awal hari
+stok_masuk
+INT
+Total obat masuk
+stok_keluar
+INT
+Total obat keluar
+stok_akhir
+INT
+Stok akhir hari
+3.4 Perancangan Antarmuka (UI/UX) 
+Wireframe atau Mockup:
+Dashboard
+Gambar 3. 4Dashboard
+Manajemen Obat
+Gambar 3. 5Manajemen Obat
+Form Pendaftaran Pasien
+Gambar 3. 6 Form Pendaftaran
+Daftar Antrian
+Gambar 3. 7 Daftar Antrian
+Form pemeriksaan
+Gambar 3. 8 Form Pemeriksaan
+Form manajemen obat manual
+*Sistem bekerja otomatis jika obat itu keluar untuk diberikan ke pasien. Form manual ini hanya  untuk mengoreksi stok (karena hilang, rusak, atau penyesuaian fisik).
+Gambar 3. 9 Form Manajemen Obat Manual
+Laporan
+Gambar 3. 10 Laporan
+Prinsip Desain
+Desain antarmuka ini dibuat dengan memerhatikan prinsip usability, consistency, dan aesthetics, agar sistem dapat dengan mudah digunakan, tampak professional, dan nyaman bagi pengguna.
+Usability
+Antarmuka dirancang agar dengan mudah digunakan oleh semua peran pengguna, yaitu, admin, dokter, dan perawat. Navigasi dibuat sederhana melalui menu sidebar yang mudah diakses. Setiap pengguna hanya dapat melihat menu yang relevan dengan perannya (role-based-menu), sehingga tidak membingungkan. Sistem juga dilengkapi dengan validasi form untuk mencegah kesalahan input serta peran konfirmasi yang digunakan untuk tindakan penting seperti penghapusan data[14].
+Consistency 
+Tampilan sistem dijaga konsistensinya dalam warna, tata letak, dan gaya komponen. Warna biru digunakan sebagai warna utama dalam sistem karena mencerminkan profesionalisme dan ketenangan dalam konteks pelayanan kesehatan. Semua tombol , form, dan elemen tabel memiliki gaya dan ukuran yang seragam agar pengguna dapat dengan mudah mengenali fungsi setiap elemen[14].
+Aesthetics
+Antarmuka dirancang dengan tampilan yang bersih dan modern dengan menggunakan kombinasi warna lembut, ikon sederhana, dan ruang kosong yang cukup antar elemen. Font yang akan digunakan dalam sistem memiliki keterbacaan tinggi, serta desain elemen seperti tombol dan kartu (card) memiliki sudut yang membulat untuk kesan modern. Tata letak yang rapi membantu pengguna fokus pada informasi utama seperti data pasien, diagnosa serta laporan[14].
+Dengan penerapan ketiga prinsip ini, antarmuka sistem menjadi lebih mudah digunakan, konsisten dan nyaman dilihat, sehingga, dapat mendukung efisiensi kerja admin, dokter, dan perawat dalam kegiatan operasional poliklinik.
+3.5 Perancangan Algoritma atau Proses Bisnis (Opsional)
+Flowchart atau Diagram Alir:
+Flowchart berikut menampilkan alur proses utama dalam sistem :
+Pasien datang ke poliklinik dan melakukan pendaftaran melalui perawat atau admin.
+Sistem akan menyimpan data pasien dan membuat data pendaftaran (nomor pendaftaran dan antrian).
+Perawat akan melakukan triase awal seperti pengukuran suhu, berat, dan tinggi badan.
+Dokter akan memeriksa pasien dan memasukkan hasil diagnosa dan tindakan medis.
+Jika diperlukan, dokter membuat resep obat yang kemudian akan diserahkan kepada perawat.
+Perawat mengambil obat dari stok gudang dan memberikan obat kepada pasien.
+Sistem otomatis mencatat transaksi stok obat serta sistem akan membuat catatan harian obat.
+Admin dapat mencetak laporan harian yang berisi data pasien, diagnosa, dan penggunaan obat.
+Flowchart ini menggambarkan keterhubungannya antaran aktor utama yaitu (Pasien, Perawat, Dokter, dan Admin) dengan proses di sistem, dimulai dari pendaftaran pasien sampai dibuatnya laporan harian.
+Penjelasan Algoritma
+Algoritma yang akan digunakan adalah logika data berbasis CRUD (Create, Read, Update, Delete) yang akan diimplementasikan dalam setiap modul utama, dengan penjelasan sebagai berikut :
+Algoritma pendaftaran pasien 
+Sistem akan memeriksa apakah pasien sudah terdaftar di database.
+Jika  belum, sistem akan menambahkan data baru ke dalam tabel pasien.
+Jika sudah ada, sistem hanya akan membuat data pendaftaran baru dengan nomor antrian dan nomor pendaftaran otomatis.
+Algoritma Pemeriksaan dan Diagnosa Dokter
+Setelah pasien telah selesai diperiksa, dokter akan memasukkan diagnosa dan tindakan ke sistem. Data akan disimpan di tabel diagnosa yang terhubung dengan pendaftaran dan dokter.
+Algoritma Pembuatan Resep dan Manajemen Obat 
+Dokter membuat resep, kemudian sistem akan menyimpan data resep dan detail obat ke dalam tabel resep dan resep_detail. Saat resep disimpan, sistem secara otomatis akan mengurangi stok obat, dan mencatat transaksi di tabel stok transaksi.
+Algoritma Pembuatan Laporan Harian
+Sistem akan melakukan rekap otomatis berdasarkan data Pendaftaran, diagnosa, resep dan stok_transaksi yang akan menjadi laporan harian dan dicetak oleh admin[7].
+3.6 Spesifikasi Teknologi
+Bahasa Pemrograman:
+Bahasa pemograman yang akan digunakan adalah :
+1. PHP
+PHP digunakan sebagai bahasa pemrograman pada sisi server (backend) yang berfungsi untuk mengelola logika utama sistem. PHPbertanggung jawab dalam memproses data yang dikirim oleh pengguna, seperti data pendaftaran pasien, pemeriksaan, dan pengelolaan obat. Selain itu, PHP juga digunakan untuk menghubungkan aplikasi dengan database, melakukan pengolahan data, serta menghasilkan output berupa halaman web yang akan ditampilkan kepada pengguna.
+2. JavaScript
+JavaScript digunakan pada sisi client (frontend) untuk memberikan interaksi dinamis pada halaman web. Dengan JavaScript, sistem dapat merespon tindakan pengguna secara langsung, seperti validasi input form sebelum dikirim ke server, menampilkan notifikasi, serta memperbarui tampilan tanpa perlu memuat ulang halaman. Hal ini membuat sistem menjadi lebih interaktif dan meningkatkan pengalaman pengguna.
+3. HTML dan CSS
+HTML dan CSS digunakan untuk membangun tampilan antarmuka sistem. HTML berfungsi sebagai struktur dasar dalam menyusun elemen-elemen halaman web, seperti form, tabel, tombol, dan teks. Sedangkan CSS digunakan untuk mengatur tampilan visual, seperti warna, ukuran, layout, dan desain halaman agar terlihat lebih menarik dan rapi. Kombinasi HTML dan CSS memungkinkan sistem memiliki tampilan yang user-friendly dan mudah digunakan oleh pengguna.
+Framework:
+Framework yang digunakan :
+Laravel (PHP Framework)
+Laravel merupakan framework berbasis PHP yang digunakan dalam pengembangan aplikasi pada sisi server (backend). Laravel menerapkan konsep Model-View-Controller(MVC) yang memisahkan antara logika aplikasi, tampilan, dan pengelolaan data, sehingga kode program menjadi lebih terstruktur dan mudah dipelihara. Selain itu, Laravel menyediakan berbagai fitur seperti sistem routing untuk mengatur alur URL, ORM(Eloquent) untuk mempermudah interaksi dengan database, serta fitur keamanan seperti autentikasi dan proteksi terhadap serangan umum. Dengan adanya Laravel, proses pengembangan sistem menjadi lebih cepat, rapi, dan aman[8].
+Bootstrap (Frontend Framework) 
+Bootstrap merupakan framework frontend berbasis CSS yang digunakan untuk membangun tampilan antarmuka pengguna. Bootstrap menyediakan berbagai komponen siap pakai seperti tombol, form, tabel, dan navigasi, sehingga memudahkan dalam pembuatan tampilan tanpa harus membuat desain dari awal. Selain itu, Bootstrap menggunakan sistem grid yang memungkinkan tampilan web menjadi responsif, yaitu dapat menyesuaikan dengan berbagai ukuran layar perangkat seperti komputer, tablet, maupun smartphone. Dengan menggunakan Bootstrap, tampilan sistem menjadi lebih menarik, konsisten, dan mudah digunakan oleh pengguna[9].
+Basis Data:
+MySQL : digunakan sebagai sistem manajemen basis data relasional untuk menyimpan data berupa pasien, pendaftaran, rekam medis, obat, dan laporan secara terstruktur[10].
+Tools Pendukung:
+1. Visual Studio Code
+Visual Studio Code merupakan aplikasi code editor yang digunakan untuk menulis dan mengelola kode program. Editor ini dipilih karena memiliki fitur yang lengkap seperti syntax highlighting, debugging, serta dukungan ekstensi yang memudahkan pengembangan aplikasi berbasis PHP dan web.
+2. Laragon
+Laragon merupakan software yang digunakan sebagai server lokal (localhost) untuk menjalankan aplikasi berbasis web. Laragon menyediakan layanan seperti web server (Apache) dan database server (MySQL) yang diperlukan dalam pengembangan sistem berbasis PHP dan framework Laravel. Dengan Laragon, proses pengembangan dan pengujian dapat dilakukan secara lokal sebelum sistem diimplementasikan secara online.
+3. Git dan GitHub
+Git merupakan sistem version control yang digunakan untuk mengelola perubahan kode program selama proses pengembangan. Sedangkan GitHub digunakan sebagai platform untuk menyimpan repository secara online. Dengan menggunakan Git dan GitHub, pengembang dapat melacak perubahan kode, melakukan kolaborasi, serta menjaga keamanan versi program.
+4. Figma
+Figma merupakan tools berbasis web yang digunakan untuk merancang desain antarmuka pengguna (User Interface/UI). Figma memungkinkan pembuatan wireframe dan prototype sebelum sistem diimplementasikan ke dalam bentuk kode, sehingga membantu dalam perencanaan tampilan yang lebih terstruktur dan user-friendly.
+5. Google Chrome
+Google Chrome merupakan web browser yang digunakan untuk menguji tampilan dan fungsionalitas sistem. Browser ini digunakan untuk memastikan bahwa aplikasi berjalan dengan baik, responsif, serta sesuai dengan desain yang telah dirancang.
+3.7 Rencana Pengujian
+Menjelaskan metode dan rencana pengujian sistem untuk memastikan fungsionalitas dan kualitas.
+Jenis Pengujian:
+Pengujian yang digunakan pada penelitian ini meliputi :
+Pengujian Fungsional (Functional Testing) : pengujian ini dilakukan untuk memastikan bahwa setiap fitur sistem berjalan sesuai dengan fungsi yang telah didefinisikan dalam analisis kebutuhan. Metode yang akan digunakan adalah Black Box Testing, di mana pengujian difokuskan pada hasil keluaran sistem berdasarkan input yang diberikan tanpa melihat kode program secara langsung[7].
+Skenario Pengujian:
+No
+Fitur yang Diuji
+Skenario Pengujian
+Hasil yang Diharapkan
+1
+Login Pengguna 
+Pengguna memasukkan username dan password yang benar atau salah
+Sistem hanya mengizinkan login jika data benar dan menolak jika salah
+2
+Pendaftaran Pasien
+Admin dapat melakukan input data pasien baru dan pendaftarn
+Data pasien tersimpan dan nomor antrian otomatis muncul
+3
+Manajemen Antrian
+Beberapa pasien mendaftar secara berurutan
+Sistem menampilkan urutan antrian sesuai dengan waktu pendaftaran
+4
+Input Rekam Medis
+Dokter memasukkan diagnosa dan tindakan
+Data diagnosa tersimpan dan terhubung ke pendaftaran pasien 
+5
+Pembuatan Resep
+Dokter menambahkan obat ke resep pasien 
+Resep tersimpan dan otomatis mengurangi stok obat
+6
+Manajemen Obat
+Admin dan perawat dapat menambah dan mengubah data obat 
+Perubahan data pada obat tersimpan di database dan tampil di sistem
+7
+Peringatan Stok Minimal
+Stok obat kurang dari batas minimal
+Sistem dapat menampilkan peringatan atau notifikasi stok yang hampir habis
+8
+Laporan Kunjungan Pasien 
+Admin mencetak laporan dalam periode tertentu
+Laporan muncul sesuai data yang ada di pendaftaran pada tanggal yang dipilih
+9
+Laporan Diagnosa dan Penggunaan Obat
+Admin dapat memilih peiode waktu laporan
+Data laporan dapat tampil sesuai filter yang dipilih secara lengkap
+10
+Logout Pengguna
+Pengguna keluar dari sistem
+Sistem Kembali ke halaman logindan sesi pengguna diakhiri
+BAB IV HASIL DAN PEMBAHASAN
+4.1 Gambaran Umum Sistem
+Sistem Informasi Manajemen Poliklinik POLNEP merupakan aplikasi berbasis web yang dirancang untuk mengintegrasikan dan memusatkan seluruh alur pelayanan kesehatan di Poliklinik Politeknik Negeri Pontianak. Sistem ini dibangun dengan arsitektur Model-View-Controller (MVC) menggunakan framework Laravel 10, basis data relasional MySQL, serta antarmuka yang responsif.
+Level Akses dan Hak Pengguna
+Sistem membagi hak akses ke dalam 3 (tiga) peran pengguna (roles) untuk menjaga keamanan dan kejelasan wewenang operasional:
+Administrator (admin): Bertanggung jawab mengelola data pengguna/staff, data master (Poli, Dokter, Perawat, Obat), serta memantau laporan kunjungan dan logistik obat secara menyeluruh.
+Perawat (perawat): Bertanggung jawab melakukan pendaftaran pasien (mahasiswa/civitas akademika POLNEP maupun pasien umum), menginput pengukuran tanda-tanda vital (suhu tubuh, tinggi badan, berat badan), serta menerbitkan nomor antrian pendaftaran harian.
+Dokter (dokter): Bertanggung jawab menerima antrian pasien sesuai poliklinik tujuan, menginput diagnosa hasil pemeriksaan medis, mencatat tindakan kesehatan, serta meresepkan obat secara langsung yang terhubung otomatis dengan stok apotek.
+Alur Kerja Sistem (Workflow)
+Alur operasional pelayanan poliklinik pada sistem berjalan secara berurutan dan terintegrasi:
+Tahap Pendaftaran & Skrining Awal: Pasien mendatangi poliklinik. Perawat menginput data pendaftaran pasien, mengukur suhu/TB/BB, dan sistem secara otomatis menerbitkan Nomor Pendaftaran (contoh: REG-20260309-001) serta Nomor Antrian Harian.
+Tahap Pemeriksaan Medis: Dokter melihat daftar antrian pasien berstatus baru. Dokter memanggil pasien, status berubah menjadi diproses. Dokter menginputkan diagnosa penyakit dan tindakan medis.
+Tahap Penulisan Resep & Pemotongan Stok Atomik: Dokter memilih obat dan dosis. Sistem melakukan pencatatan resep (RSP-YYYYMMDD-XXXX) dan secara atomik mengurangi jumlah stok_tersedia pada master obat. Status pendaftaran diperbarui menjadi selesai.
+Tahap Transaksi Logistik & Pelaporan: Petugas farmasi/admin dapat menginput mutasi stok obat (masuk/keluar) yang secara otomatis memperbarui tabel stok_transaksis dan catatan_harian_obats. Admin dapat mengunduh/melihat Laporan Kunjungan, Laporan Diagnosa, dan Laporan Stok Obat.
+4.2 Implementasi Sistem
+Sub-bab ini menguraikan bagaimana Sistem Informasi Manajemen Poliklinik POLNEP diimplementasikan secara teknis berdasarkan rancangan sistem yang telah dibuat pada BAB III. Implementasi mencakup lingkungan pengembangan, implementasi basis data, implementasi antarmuka (GUI), fitur-fitur utama beserta fungsinya, serta potongan kode program penting.
+Lingkungan Implementasi Sistem
+Sistem dibangun menggunakan spesifikasi perangkat lunak (software) dan teknologi sebagai berikut:
+Framework Back-End & Front-End: Laravel 10 (PHP v8.1+) dengan Blade Templating Engine.
+Database Management System (DBMS): MySQL Database Server.
+Web Server & Environment: Laragon / Apache Web Server.
+Styling & User Interface: Bootstrap CSS Framework / Modern Responsive UI.
+Implementasi Basis Data
+Implementasi basis data dilakukan melalui fasilitas Migration pada Laravel. Berdasarkan rancangan basis data pada BAB III, sistem memiliki 12 tabel utama yang saling berelasi:
+users: Menyimpan kredensial dan hak akses pengguna (admin, dokter, perawat).
+pasiens: Menyimpan identitas pasien (kategori Civitas POLNEP / Umum).
+polis, dokters, perawats: Menyimpan data spesialisasi poli dan staff medis.
+pendaftarans: Menyimpan data registrasi antrian, keluhan, dan vital sign.
+diagnosas, reseps, resep_details: Menyimpan rekam medis dan rincian resep obat.
+obats, stok_transaksis, catatan_harian_obats: Mengelola stok logistik obat dan mutasi fisik.
+Implementasi (GUI) dan Penjelasan Fitur Utama
+Halaman Login
+Halaman login adalah halaman pertama yang muncul ketika pengguna membuka aplikasi.Halaman ini berfungsi untuk memastikan bahwa hanya pengguna yang terdaftar saja yang bisa masuk ke dalam sistem.Tampilannya dibuat simpel dan rapi, hanya berisi kolom untuk mengisi username dan password. Setelah pengguna menekan tombol login, sistem akan memeriksa apakah username dan password yang dimasukkan sudah sesuai dengan data yang tersimpan di sistem, serta mengecek apakah akun tersebut dalam keadaan aktif atau tidak.Jika username dan password benar serta akun aktif, pengguna akan langsung diarahkan ke halaman utama (dashboard) sesuai dengan perannya masing-masing.
+Halaman Dashboard Utama 
+Halaman dashboard adalah halaman pertama yang muncul setelah pengguna berhasil masuk ke dalam sistem. Halaman ini berfungsi sebagai pusat informasi yang memberikan gambaran umum tentang kondisi poliklinik secara langsung dan terkini.
+Di bagian atas halaman, terdapat empat kotak ringkasan informasi penting, yaitu:
+Pasien Hari Ini — menampilkan jumlah pasien yang datang berobat pada hari tersebut
+Antrian Menunggu — menampilkan jumlah pasien yang sedang menunggu giliran untuk diperiksa
+Stok Obat Kritis — menampilkan jumlah obat yang stoknya sudah hampir habis atau di bawah batas minimum
+Total Kunjungan — menampilkan total keseluruhan kunjungan pasien
+Jika ada obat yang stoknya hampir habis, sistem juga akan menampilkan pesan peringatan secara otomatis beserta daftar nama obat yang perlu segera diisi ulang.Di bagian bawah, terdapat dua bagian tambahan. Bagian pertama adalah daftar antrian hari ini yang memperlihatkan nomor antrian, nama pasien, serta status pemeriksaannya — apakah masih menunggu, sedang diperiksa, atau sudah selesai. Bagian kedua adalah informasi umum poliklinik, seperti jam operasional, lokasi, jumlah dokter dan perawat yang tersedia, serta total jenis obat yang ada.
+3) Halaman Data Pasien
+Halaman data pasien digunakan untuk mengelola seluruh data pasien yang terdaftar di poliklinik. Pada halaman ini ditampilkan daftar pasien dalam bentuk tabel yang memuat informasi seperti nomor rekam medis, nama lengkap, jenis kelamin, status pasien (apakah civitas POLNEP atau umum), serta nomor HP.Pada halaman ini, pengguna dapat melakukan beberapa tindakan, yaitu:
+a) Tambah Pasien — menambahkan data pasien baru ke dalam sistem
+b) Daftarkan Antrian — langsung mendaftarkan pasien ke antrian pemeriksaan tanpa perlu berpindah halaman
+c) Edit — mengubah data pasien yang sudah tersimpan
+d) Hapus — menghapus data pasien dari sistem
+Jika belum ada pasien yang terdaftar, sistem akan menampilkan keterangan bahwa data masih kosong.
+4) Halaman Antrian Pendaftaran
+Halaman antrian pendaftaran menampilkan daftar semua pasien yang telah mendaftar untuk berobat ke poliklinik. Setiap baris data memuat informasi tanggal pendaftaran, nomor pendaftaran, nomor antrian, nama pasien, poli yang dituju, nama dokter yang bertugas, serta status antrian saat ini.
+Status antrian terbagi menjadi empat kondisi, yaitu:
+a) Menunggu Panggilan — pasien sudah mendaftar dan sedang menunggu giliran
+b) Sedang Periksa — pasien sedang dalam proses pemeriksaan oleh dokter
+c) Selesai — pasien sudah selesai menjalani pemeriksaan
+d) Batal — pendaftaran telah dibatalkan
+Perlu diketahui bahwa hanya pengguna dengan peran admin atau perawat yang dapat menambahkan, mengubah, atau menghapus data pendaftaran. Semua pengguna dapat melihat detail dari masing-masing data pendaftaran.
+5) Halaman Antrian Pemeriksaan (Diagnosa)
+Halaman antrian pemeriksaan khusus digunakan oleh dokter untuk melihat daftar pasien yang perlu diperiksa. Informasi yang ditampilkan meliputi tanggal dan waktu masuk pasien, nomor registrasi, nama pasien, poliklinik tujuan, nama dokter jaga, keluhan awal yang disampaikan pasien, serta status pemeriksaan saat ini.Pada halaman ini, dokter dapat melakukan dua tindakan utama, yaitu:
+a) Proses Periksa — tombol ini muncul jika pasien masih berstatus menunggu atau sedang diperiksa. Dengan menekan tombol ini, dokter akan diarahkan ke halaman pengisian hasil pemeriksaan untuk mencatat diagnosa dan resep obat
+b) Lihat Hasil — tombol ini muncul jika pemeriksaan sudah selesai, sehingga dokter dapat melihat kembali hasil diagnosa yang telah diinput sebelumnya. Tersedia pula tombol Batal untuk membatalkan diagnosa jika terjadi kesalahan, dan sistem akan secara otomatis mengembalikan stok obat yang sudah digunakan ke jumlah semula.
+6) Halaman Data Obat
+Halaman data obat digunakan untuk mengelola daftar seluruh obat dan barang farmasi yang tersedia di poliklinik. Setiap obat ditampilkan dengan informasi kode obat, nama obat, satuan (misalnya tablet atau botol), jumlah stok yang tersedia saat ini, batas stok minimal, serta status kondisi stok.
+Status stok obat terbagi menjadi tiga kondisi, yaitu:
+a) Aman — stok obat masih berada di atas batas minimal yang ditentukan
+b) Kritis / Hampir Habis — stok obat sudah menyentuh atau berada di bawah batas minimal
+c) Habis — stok obat sudah mencapai angka nol
+Pengguna dapat menambahkan obat baru, mengubah data obat yang sudah ada, serta menghapus data obat. Terdapat peringatan saat hendak menghapus obat, karena jika obat tersebut pernah digunakan dalam transaksi sebelumnya, sebaiknya tidak dihapus agar riwayat penggunaan tetap tersimpan dengan baik.
+7) Halaman Transaksi Stok Obat
+Halaman ini mencatat semua pergerakan stok obat yang terjadi di poliklinik, baik obat yang masuk (penambahan stok dari pengadaan) maupun obat yang keluar (penggunaan). Setiap catatan transaksi menampilkan waktu transaksi, nama obat, jenis transaksi, jumlah, nama pengguna yang mencatat, serta keterangan tambahan jika ada.Apabila terdapat obat yang stoknya sudah kritis, sistem akan menampilkan pesan peringatan di bagian atas halaman disertai tautan langsung untuk mengecek data obat.
+Pengguna dapat menambahkan transaksi baru untuk mencatat obat yang baru diterima atau baru dikeluarkan. Jika terjadi kesalahan pencatatan, setiap transaksi dapat dibatalkan dan sistem akan secara otomatis menyesuaikan kembali jumlah stok obat ke kondisi sebelum transaksi tersebut dilakukan.
+8) Halaman Data Dokter
+Halaman data dokter digunakan untuk mengelola data seluruh dokter yang bertugas di poliklinik. Informasi yang ditampilkan meliputi nama dokter, poliklinik tempat dokter bertugas, spesialisasi, nomor HP, jadwal praktek, serta nama akun yang digunakan dokter untuk masuk ke dalam sistem.Pengguna dapat menambahkan dokter baru, mengubah data dokter yang sudah ada, atau menghapus data dokter dari sistem. Perlu diperhatikan bahwa jika data dokter dihapus, maka akun login milik dokter tersebut juga akan ikut terhapus secara permanen dari sistem.
+9) Halaman Data Perawat
+Halaman data perawat digunakan untuk mengelola data seluruh perawat yang bertugas di poliklinik. Informasi yang ditampilkan meliputi nama perawat, nomor HP, serta nama akun yang digunakan perawat untuk masuk ke dalam sistem.Pengguna dapat menambahkan perawat baru, mengubah data perawat yang sudah ada, atau menghapus data perawat. Sama seperti data dokter, jika data perawat dihapus maka akun login milik perawat tersebut juga akan ikut terhapus secara permanen dari sistem.
+10) Halaman Data Poliklinik
+Halaman data poliklinik digunakan untuk mengelola daftar poli atau klinik yang tersedia dalam sistem. Setiap baris data menampilkan nama poliklinik beserta keterangan singkat mengenai poli tersebut.Pengguna dapat menambahkan poli baru, mengubah nama atau keterangan poli yang sudah ada, serta menghapus poli yang tidak lagi digunakan. Perlu diperhatikan bahwa jika suatu poli dihapus, maka semua data dokter dan data pendaftaran pasien yang berkaitan dengan poli tersebut akan ikut terhapus dari sistem.
+11) Halaman Laporan
+Halaman laporan merupakan pusat laporan yang menyediakan tiga jenis laporan utama untuk keperluan pengelolaan dan pemantauan poliklinik, yaitu:
+a) Laporan Kunjungan Pasien — menampilkan rekap jumlah pasien dan antrian dari seluruh poli dalam periode waktu tertentu
+b) Laporan Diagnosa Penyakit — menampilkan data penyakit yang paling banyak didiagnosa serta tren penyakit yang tercatat dalam kurun waktu tertentu
+c) Laporan Penggunaan Obat — menampilkan data pergerakan obat masuk dan keluar, termasuk obat yang diresepkan oleh dokter kepada pasien
+Setiap laporan dapat dibuka dengan menekan tombol Buka Laporan yang tersedia pada masing-masing kartu laporan.
+Potongan Kode Program Utama dan Penjelasannya
+Pembuatan Nomor Antrian Otomatis (PendaftaranController.php)
+Kode ini berfungsi untuk membuat nomor antrian harian secara otomatis dan menghasilkan nomor pendaftaran unik dengan format REG-YYYYMMDD-XXX
+<?php
+namespace App\Http\Controllers;
+use Illuminate\Http\Request;
+use App\Models\Pendaftaran;
+use App\Models\Pasien;
+use App\Models\Poli;
+use App\Models\Dokter;
+use App\Models\Perawat;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
+class PendaftaranController extends Controller
+{
+    publicfunction index()
+    {
+        $pendaftarans = Pendaftaran::with(['pasien', 'poli', 'dokter'])
+                                   ->orderBy('created_at', 'desc')
+                                   ->paginate(10);
+        return view('pendaftaran.index', compact('pendaftarans'));
+    }
+    publicfunction create()
+    {
+        $pasiens = Pasien::all();
+        $polis = Poli::all();
+        $dokters = Dokter::with('user')->get();
+        return view('pendaftaran.create', compact('pasiens', 'polis', 'dokters'));
+    }
+    publicfunction store(Request $request)
+    {
+        $request->validate([
+            'id_pasien' => 'required|exists:pasiens,id_pasien',
+            'id_poli' => 'required|exists:polis,id_poli',
+            'id_dokter' => 'required|exists:dokters,id_dokter',
+            'keluhan' => 'required|string',
+        ]);
+        $today = Carbon::today();
+        // Cari perawat yang sedang login (jika role perawat)
+        $id_perawat = null;
+        if (Auth::user()->role == 'perawat') {
+            $perawat = Perawat::where('id_user', Auth::id())->first();
+            $id_perawat = $perawat ? $perawat->id_perawat : null;
+        }
+        // Generate Nomor Antrian per hari
+        $lastAntrian = Pendaftaran::whereDate('tanggal_daftar', $today)->max('no_antrian');
+        $no_antrian = $lastAntrian ? $lastAntrian + 1 : 1;
+        // Generate Nomor Pendaftaran
+        $nomor_pendaftaran = 'REG-' . date('Ymd') . '-' . str_pad($no_antrian, 3, '0', STR_PAD_LEFT);
+        Pendaftaran::create([
+            'nomor_pendaftaran' => $nomor_pendaftaran,
+            'tanggal_daftar' => now(),
+            'keluhan' => $request->keluhan,
+            'no_antrian' => $no_antrian,
+            'suhu_tubuh' => $request->suhu_tubuh,
+            'berat_badan' => $request->berat_badan,
+            'tinggi_badan' => $request->tinggi_badan,
+            'status_pendaftaran' => 'baru',
+            'id_pasien' => $request->id_pasien,
+            'id_poli' => $request->id_poli,
+            'id_dokter' => $request->id_dokter,
+            'id_perawat' => $id_perawat,
+            'id_user' => Auth::id()
+        ]);
+        return redirect()->route('pendaftaran.index')->with('success', 'Pendaftaran antrian berhasil dibuat.');
+    }
+    publicfunction show(string $id)
+    {
+        $pendaftaran = Pendaftaran::with(['pasien', 'poli', 'dokter', 'perawat'])->findOrFail($id);
+        return view('pendaftaran.show', compact('pendaftaran'));
+    }
+    publicfunction edit(string $id)
+    {
+        $pendaftaran = Pendaftaran::findOrFail($id);
+        $pasiens = Pasien::all();
+        $polis = Poli::all();
+        $dokters = Dokter::with('user')->get();
+        return view('pendaftaran.edit', compact('pendaftaran', 'pasiens', 'polis', 'dokters'));
+    }
+    publicfunction update(Request $request, string $id)
+    {
+        $request->validate([
+            'status_pendaftaran' => 'required|in:baru,diproses,selesai,batal',
+        ]);
+        $pendaftaran = Pendaftaran::findOrFail($id);
+        $pendaftaran->update([
+            'suhu_tubuh' => $request->suhu_tubuh,
+            'berat_badan' => $request->berat_badan,
+            'tinggi_badan' => $request->tinggi_badan,
+            'status_pendaftaran' => $request->status_pendaftaran,
+        ]);
+        return redirect()->route('pendaftaran.index')->with('success', 'Data Pendaftaran berhasil di-update.');
+    }
+    publicfunction destroy(string $id)
+    {
+        $pendaftaran = Pendaftaran::findOrFail($id);
+        $pendaftaran->delete();
+        return redirect()->route('pendaftaran.index')->with('success', 'Data pendaftaran dihapus.');
+    }
+}
+Pengujian Sistem
+Pengujian yang digunakan pada penelitian ini meliputi :
+Jenis Pengujian:
+Pengujian Fungsional (Functional Testing) : pengujian ini dilakukan untuk memastikan bahwa setiap fitur sistem berjalan sesuai dengan fungsi yang telah didefinisikan dalam analisis kebutuhan. Metode yang akan digunakan adalah Black Box Testing, di mana pengujian difokuskan pada hasil keluaran sistem berdasarkan input yang diberikan tanpa melihat kode program secara langsung[7].
+Skenario Pengujian:
+No
+Fitur yang Diuji
+Skenario Pengujian
+Hasil yang Diharapkan
+1
+Login Pengguna 
+Pengguna memasukkan username dan password yang benar atau salah
+Sistem hanya mengizinkan login jika data benar dan menolak jika salah
+2
+Pendaftaran Pasien
+Admin dapat melakukan input data pasien baru dan pendaftarn
+Data pasien tersimpan dan nomor antrian otomatis muncul
+3
+Manajemen Antrian
+Beberapa pasien mendaftar secara berurutan
+Sistem menampilkan urutan antrian sesuai dengan waktu pendaftaran
+4
+Input Rekam Medis
+Dokter memasukkan diagnosa dan tindakan
+Data diagnosa tersimpan dan terhubung ke pendaftaran pasien 
+5
+Pembuatan Resep
+Dokter menambahkan obat ke resep pasien 
+Resep tersimpan dan otomatis mengurangi stok obat
+6
+Manajemen Obat
+Admin dan perawat dapat menambah dan mengubah data obat 
+Perubahan data pada obat tersimpan di database dan tampil di sistem
+7
+Peringatan Stok Minimal
+Stok obat kurang dari batas minimal
+Sistem dapat menampilkan peringatan atau notifikasi stok yang hampir habis
+8
+Laporan Kunjungan Pasien 
+Admin mencetak laporan dalam periode tertentu
+Laporan muncul sesuai data yang ada di pendaftaran pada tanggal yang dipilih 
+9
+Laporan Diagnosa dan Penggunaan Obat
+Admin dapat memilih peiode waktu laporan
+Data laporan dapat tampil sesuai filter yang dipilih secara lengkap
+10
+Logout Pengguna
+Pengguna keluar dari sistem
+Sistem Kembali ke halaman logindan sesi pengguna diakhiri
+Analisis Hasil dan Evaluasi
+Menganalisis apakah hasil implementasi sesuai dengan tujuan tugas akhir atau pengembangan yang telah ditetapkan.Jika ada perbedaan antara hasil yang diharapkan dan yang diperoleh, jelaskan penyebabnya. Sertakan kekurangan dan keterbatasan dari sistem yang dikembangkan.Jika membandingkan dengan metode lain, berikan analisis kelebihan dan kekurangan dari pendekatan yang digunakan.
+BAB V PENUTUP
+Bab ini berisi kesimpulan dari hasil yang telah diperoleh serta saran untuk pengembangan atau penelitian lebih lanjut. Penyampaian kesimpulan harus berdasarkan hasil dan pembahasan yang telah dilakukan pada Bab IV, bukan sekadar opini penulis.
+Kesimpulan
+Kesimpulan harus menjawab tujuan tugas akhir atau pengembangan yang telah ditetapkan di Bab I. Beberapa poin yang harus diperhatikan dalam penulisan kesimpulan harus ditulis secara singkat, jelas, dan sistematis. Tulis ringkasan dari hasil tugas akhir atau pengembangan yang telah dilakukan.Tidak menyajikan data baru, tetapi merangkum temuan utama dari Bab IV.Jika ada kendala atau suatu fitur yang tidak tercapai dapat dijelaskan. 
+Saran
+Saran ditujukan untuk pengembangan lebih lanjut, baik untuk peningkatan sistem, metode, maupun tugas akhir berikutnya.Dapat mencakup perbaikan sistem berdasarkan kekurangan yang ditemukan di Bab IV.Saran sebaiknya bersifat realistis dan dapat diterapkan.Jika ada keterbatasan dalam tugas akhir, bisa disertakan saran untuk mengatasi keterbatasan tersebut.
+DAFTAR PUSTAKA
+Gunakan reference manager WAJIB
+[1] 
+F. Ramadah, P. D. Wibawa dan A. Rizal, “Sistem Deteksi Api Menggunakan Pengolahan Citra Pada Webcam Dengan Metode Yolov3,” e-Proceeding of Engineering, vol. 9, p. 227, 2022. 
+[2] 
+“Damkar Banda Aceh,” Pemerintah Kota Banda Aceh, 13 July 2020. [Online]. Available: https://damkar.bandaacehkota.go.id/2020/07/13/faktor-penyebab-kebakaran-dan-upaya-pencegahan-kebakaran/. [Diakses 15 March 2023].
+[3] 
+H. Barak, “Api Melalap Apartemen Grenfell London, 72 Orang Tewas,” LIPUTAN 6, 14 Juni 2020. [Online]. Available: https://www.liputan6.com/global/read/4277948/14-6-2017-api-melalap-apartemen-grenfell-london-72-orang-tewas. [Diakses 15 March 2023].
+[4] 
+Admin, “(BERITA VIDEO) Ruang Mesin Polnep Pontianak Terbakar,” ninemedia, 4 January 2022. [Online]. Available: https://www.ninemedia.id/2022/01/berita-video-ruang-mesin-polnep.html. [Diakses 18 May 2023].
+[5] 
+S. Bayaoumi, E. Alsoubky, M. Almohsin, M. Altwaim, M. Alkaldi dan M. Alkahtani, “A Real-time Fire Detection and NotificationSystem Based on Computer Vision,” Fire Detection, 2013. 
+[6] 
+A. Gunawaardena, R. Ruwanthika dan A. Jayasekara, “Computer Vision Based Fire Alarming System,” p. 1, 2016. 
+[7] 
+M. Hendri dan E. S. Wahyuni, “PERANCANGAN SISTEM DETEKSI ASAP DAN API MENGGUNAKAN PEMROSESAN CITRA,” 2018. 
+[8] 
+O. S. Giyanto dan W. , “Prototype Alat Pendeteksi Kebakaran Dengan Notifikasi Telegram,” Seminar Nasional Industri dan Teknologi (SNIT, pp. 260-29, 2022. 
+[9] 
+J. S. Asri dan G. Firmansyah, “Implementasi Objek Detection Dan Tracking Menggunakan Deep Learning Untuk Pengolahan Citra Digital,” Konferensi Nasional Sistem Informasi , pp. 717-723, 2018. 
+[10] 
+F. Martunus, “Implementasi Face Recognition Dengan OpenCV "SMART CCTV" Untuk Keamanan Brankas Berbasis IoT,” SKRIPSI, 2020. 
+[11] 
+K. Mubarok, T. Wibowo dan S. S. Wibowo, “Kaji Awal Pendeteksi Api Menggunakan Kamera dengan Program Machine Learning,” Prosiding The 13th Industrial Research Workshop and National Seminar, pp. 639-644, 2022. 
+[12] 
+A. Oliver, “Mengenal Google Colab: Mulai dari Definisi, Cara Menggunakan, hingga Manfaatnya,” Glints, 25 January 2022. [Online]. Available: https://glints.com/id/lowongan/google-colab-adalah/#.ZCRLtXbP1EY. [Diakses 29 March 2023].
+[13] 
+Y. M. N. &. Xeratic, “Mengenal Tensorflow, Library untuk Keperluan Machine Learning Python,” DQLab, 2 July 2021. [Online]. Available: https://dqlab.id/mengenal-tensorflow-library-untuk-keperluan-machine-learning-python. [Diakses 2 March 2023].
+[14] 
+M. A. Pangestu dan e. Bunyamin, “Analisis Performa dan Pengembangan Sistem pada Gambar dengan Menggunakan Pre-Trained CNN Model,” Jurnal Teknik Informatika dan Sistem Informasi, vol. 4, no. 2, pp. 337-344, 2018. 
+[15] 
+D. AI, “Github,” DeepQuest AI, [Online]. Available: https://github.com/DeepQuestAI. [Diakses 30 March 2023].
+[16] 
+A. D. Mulyanto, “Pemanfaatan Bot Telegram Untuk Media Informasi Penelitian,” Jurnal Ilmu Komputer dan Teknologi Informasi, vol. 12, pp. 49-54, 2020. 
+[17] 
+R. Irsyad, “Penggunaan Python Web Framework Flask Untuk Pemula,” Laboratorium Telematika, Sekolah Teknik Elektro & Informatika, Institut Teknologi Bandung, 2018. 
+[18] 
+D. Shah, “Early Fire detection system using deep learning and OpenCV,” towardsdatascience, 6 July 2020. [Online]. Available: https://towardsdatascience.com/early-fire-detection-system-using-deep-learning-and-opencv-6cb60260d54a. [Diakses 17 April 2023].
+[19] 
+N. A. Putri, Tugas Akhir Penerapan Machine Learning Dengan Algoritma Convolutional Neural Network (CNN) Dalam Aplikasi Pendeteksi Pemakaian Masker, Pontianak: Perpustakaan Jurusan Teknik Elektro Politeknik Negeri Pontianak, 2021. 
+[20] 
+H. Hikmatiar, A. Jufriansyah, A. Kusnani dan S. , “Lux Meter pada Smartphone untuk,” Bincang Sains dan Teknologi (BST) , vol. 2, pp. 1-10, 2023. 
+[21] 
+F. Ramadah, P. D. Wibawa dan A. Rizal, “Fire Detection System Using Image Processing on Webcam with Yolov3 Method,” e-Proceeding of Engineering, vol. 9, p. 228, 2022. 
+LAMPIRAN
+Tuliskan semua lampiran yang ingin Anda tunjukan pada laporan tugas akhir, untuk source code, tampilkan bagian yang penting saja, tidak perlu seluruh source code dilampirkan
+Hasil Plagiarisme
+Sesuai dengan ketentuan pada Panduan Penulisan Proposal dan Laporan Tugas Akhir, toleransi yang diberikan untuk plagiarisme maksimal 20%. Pada proposal yang telah penulis susun didapatkan hasil sebesar 91% unik dan 9% plagiarisme. Hal ini menunjukkan bahwa proposal yang telah disusun layak untuk di seminarkan. Berikut gambar hasil dari pengecekkan plagiarisme secara online.
+Lampiran 1 Hasil Plagiarisme

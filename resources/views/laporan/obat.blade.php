@@ -6,7 +6,19 @@
 <div class="container-fluid">
     <div class="d-flex justify-content-between align-items-center mb-4 d-print-none">
         <h2>Laporan Penggunaan dan Mutasi Obat</h2>
-        <button onclick="window.print()" class="btn btn-secondary"><i data-feather="printer"></i> Cetak Laporan</button>
+        <div class="d-flex gap-2">
+            <a href="{{ route('laporan.obat.excel', ['start_date' => $startDate, 'end_date' => $endDate]) }}"
+               class="btn btn-success">
+                <i data-feather="download" style="width:14px;height:14px;"></i> Excel
+            </a>
+            <a href="{{ route('laporan.obat.pdf', ['start_date' => $startDate, 'end_date' => $endDate]) }}"
+               class="btn btn-danger">
+                <i data-feather="file-text" style="width:14px;height:14px;"></i> PDF
+            </a>
+            <button onclick="window.print()" class="btn btn-secondary">
+                <i data-feather="printer" style="width:14px;height:14px;"></i> Cetak
+            </button>
+        </div>
     </div>
 
     <!-- Filter Form -->

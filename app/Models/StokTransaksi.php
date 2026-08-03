@@ -12,6 +12,11 @@ class StokTransaksi extends Model
     protected $primaryKey = 'id_stok_transaksi';
     protected $guarded = [];
 
+    protected $casts = [
+        'tanggal_kadaluarsa' => 'date',
+        'tanggal_transaksi' => 'datetime',
+    ];
+
     public function obat()
     {
         return $this->belongsTo(Obat::class, 'id_obat');

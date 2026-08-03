@@ -27,7 +27,7 @@ class PasienController extends Controller
             'tanggal_lahir' => 'required|date',
             'alamat' => 'required|string',
             'no_hp' => 'required|string|max:12',
-            'status_pasien' => 'required|in:Polnep,Umum',
+            'status_pasien' => 'required|in:Polnep',
         ]);
 
         // Generate Nomor Pasien (contoh format: P001)
@@ -63,7 +63,7 @@ class PasienController extends Controller
             'tanggal_lahir' => 'required|date',
             'alamat' => 'required|string',
             'no_hp' => 'required|string|max:12',
-            'status_pasien' => 'required|in:Polnep,Umum',
+            'status_pasien' => 'required|in:Polnep',
         ]);
 
         $pasien = Pasien::findOrFail($id);

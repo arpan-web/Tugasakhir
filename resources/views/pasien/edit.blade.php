@@ -67,12 +67,8 @@
                         <label class="form-label fw-bold">Status Kepesertaan/Pasien</label>
                         <div class="d-flex mt-2">
                             <div class="form-check me-4">
-                                <input class="form-check-input" type="radio" name="status_pasien" id="statusPolnep" value="Polnep" {{ old('status_pasien', $pasien->status_pasien) == 'Polnep' ? 'checked' : '' }} required>
+                                <input class="form-check-input" type="radio" name="status_pasien" id="statusPolnep" value="Polnep" checked required>
                                 <label class="form-check-label" for="statusPolnep">Sivitas Polnep</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="status_pasien" id="statusUmum" value="Umum" {{ old('status_pasien', $pasien->status_pasien) == 'Umum' ? 'checked' : '' }} required>
-                                <label class="form-check-label" for="statusUmum">Umum</label>
                             </div>
                         </div>
                     </div>

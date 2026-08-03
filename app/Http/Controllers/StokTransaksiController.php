@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\StokTransaksi;
 use App\Models\Obat;
 use App\Models\CatatanHarianObat;
+use App\Models\Notifikasi;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -31,7 +32,8 @@ class StokTransaksiController extends Controller
             'jenis_transaksi' => 'required|in:masuk,keluar',
             'jumlah' => 'required|integer|min:1',
             'tanggal_transaksi' => 'required|date',
-            'keterangan' => 'nullable|string'
+            'keterangan' => 'nullable|string',
+            'tanggal_kadaluarsa' => 'nullable|date',
         ]);
 
         $obat = Obat::findOrFail($request->id_obat);
@@ -47,8 +49,10 @@ class StokTransaksiController extends Controller
                 'id_obat' => $request->id_obat,
                 'jenis_transaksi' => $request->jenis_transaksi,
                 'jumlah' => $request->jumlah,
+                'sisa_stok' => $request->jenis_transaksi === 'masuk' ? $request->jumlah : 0,
                 'tanggal_transaksi' => $request->tanggal_transaksi,
                 'keterangan' => $request->keterangan,
+                'tanggal_kadaluarsa' => $request->jenis_transaksi === 'masuk' ? $request->tanggal_kadaluarsa : null,
                 'id_user' => Auth::id()
             ]);
 
@@ -65,10 +69,53 @@ class StokTransaksiController extends Controller
             } else {
                 $obat->decrement('stok_tersedia', $request->jumlah);
                 $catatanHarian->increment('jumlah_keluar', $request->jumlah);
+
+                // FEFO: Kurangi sisa_stok pada batch transaksi masuk
+                $remainingToDeduct = $request->jumlah;
+                $batches = StokTransaksi::where('id_obat', $request->id_obat)
+                    ->where('jenis_transaksi', 'masuk')
+                    ->where('sisa_stok', '>', 0)
+                    ->orderByRaw('CASE WHEN tanggal_kadaluarsa IS NULL THEN 1 ELSE 0 END, tanggal_kadaluarsa ASC, id_stok_transaksi ASC')
+                    ->get();
+
+                foreach ($batches as $batch) {
+                    if ($remainingToDeduct <= 0) break;
+                    if ($batch->sisa_stok >= $remainingToDeduct) {
+                        $batch->decrement('sisa_stok', $remainingToDeduct);
+                        $remainingToDeduct = 0;
+                    } else {
+                        $remainingToDeduct -= $batch->sisa_stok;
+                        $batch->update(['sisa_stok' => 0]);
+                    }
+                }
             }
-            
+
             // Re-sync stok akhir
             $catatanHarian->update(['stok_akhir' => $obat->stok_tersedia]);
+
+            // Cek stok setelah transaksi
+            $obat->refresh();
+            if ($request->jenis_transaksi === 'masuk' && $obat->stok_tersedia > $obat->stok_minimal) {
+                // Hapus notifikasi stok kritis jika stok sudah normal kembali
+                Notifikasi::where('tipe', 'stok')
+                    ->where('pesan', 'like', "%'{$obat->nama_obat}'%")
+                    ->delete();
+            }
+
+            if ($obat->stok_tersedia <= $obat->stok_minimal) {
+                $pesanNotif = "Stok obat '{$obat->nama_obat}' menipis! Sisa stok: {$obat->stok_tersedia} {$obat->satuan} (batas minimal: {$obat->stok_minimal}).";
+                $sudahAda = Notifikasi::where('tipe', 'stok')
+                    ->where('status', 'belum_dibaca')
+                    ->where('pesan', 'like', "%'{$obat->nama_obat}'%")
+                    ->exists();
+                if (!$sudahAda) {
+                    Notifikasi::create([
+                        'pesan' => $pesanNotif,
+                        'tipe' => 'stok',
+                        'status' => 'belum_dibaca',
+                    ]);
+                }
+            }
 
             DB::commit();
             return redirect()->route('stok_transaksi.index')->with('success', 'Transaksi Stok berhasil dicatat.');
@@ -85,7 +132,6 @@ class StokTransaksiController extends Controller
 
     public function edit(string $id)
     {
-        // Data transaksi seharusnya tidak diubah sembarangan demi integritas. Jika salah, dihapus lalu input lagi.
         return redirect()->route('stok_transaksi.index')->with('warning', 'Transaksi logistik tidak dapat diubah (immutable). Silakan hapus transaksi lalu rekam ulang jika ada kesalahan.');
     }
 
@@ -98,24 +144,19 @@ class StokTransaksiController extends Controller
     {
         $transaksi = StokTransaksi::findOrFail($id);
         $obat = Obat::findOrFail($transaksi->id_obat);
-        
-        // Logical check: Jika membatalkan 'masuk', apakah stok cukup untuk dikurangi?
+
         if ($transaksi->jenis_transaksi == 'masuk' && $obat->stok_tersedia < $transaksi->jumlah) {
             return back()->withErrors(['error' => 'Gagal membatalkan transaksi Masuk karena stok obat saat ini sudah terpakai dan tidak mencukupi untuk direstore.']);
         }
 
         DB::beginTransaction();
         try {
-            // Restore Stok Master
             if ($transaksi->jenis_transaksi == 'masuk') {
                 $obat->decrement('stok_tersedia', $transaksi->jumlah);
             } else {
-                // membatalkan 'keluar' berarti menambah stok
                 $obat->increment('stok_tersedia', $transaksi->jumlah);
             }
 
-            // Restore Catatan Harian opsional (kompleksitas diredam sementara untuk pembatalan agar tidak mengubah record lewat)
-            
             $transaksi->delete();
 
             DB::commit();
@@ -123,6 +164,50 @@ class StokTransaksiController extends Controller
         } catch (\Exception $e) {
             DB::rollBack();
             return back()->withErrors(['error' => 'Gagal membatalkan transaksi: ' . $e->getMessage()]);
+        }
+    }
+
+    /**
+     * Memusnahkan sisa stok dari batch yang telah kadaluarsa.
+     */
+    public function musnahkan(string $id)
+    {
+        $batch = StokTransaksi::findOrFail($id);
+        if ($batch->jenis_transaksi !== 'masuk' || $batch->sisa_stok <= 0) {
+            return back()->with('warning', 'Batch ini tidak memiliki sisa stok untuk dimusnahkan.');
+        }
+
+        $jumlahDisposed = $batch->sisa_stok;
+        $obat = Obat::findOrFail($batch->id_obat);
+
+        DB::beginTransaction();
+        try {
+            // 1. Buat transaksi keluar untuk pemusnahan
+            StokTransaksi::create([
+                'id_obat' => $batch->id_obat,
+                'jenis_transaksi' => 'keluar',
+                'jumlah' => $jumlahDisposed,
+                'sisa_stok' => 0,
+                'tanggal_transaksi' => now(),
+                'keterangan' => "Pemusnahan stok kadaluarsa (Batch Trx #{$batch->id_stok_transaksi}, Expired: " . ($batch->tanggal_kadaluarsa ? date('d/m/Y', strtotime($batch->tanggal_kadaluarsa)) : '-') . ")",
+                'id_user' => Auth::id()
+            ]);
+
+            // 2. Set sisa_stok batch ini jadi 0
+            $batch->update(['sisa_stok' => 0]);
+
+            // 3. Kurangi stok_tersedia di master obat
+            if ($obat->stok_tersedia >= $jumlahDisposed) {
+                $obat->decrement('stok_tersedia', $jumlahDisposed);
+            } else {
+                $obat->update(['stok_tersedia' => 0]);
+            }
+
+            DB::commit();
+            return back()->with('success', "Stok kadaluarsa {$obat->nama_obat} sebanyak {$jumlahDisposed} {$obat->satuan} berhasil dimusnahkan.");
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return back()->withErrors(['error' => 'Gagal memusnahkan stok kadaluarsa: ' . $e->getMessage()]);
         }
     }
 }

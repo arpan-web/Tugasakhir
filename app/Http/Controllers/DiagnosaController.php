@@ -9,6 +9,7 @@ use App\Models\Pendaftaran;
 use App\Models\Obat;
 use App\Models\Resep;
 use App\Models\ResepDetail;
+use App\Models\StokTransaksi;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
@@ -107,6 +108,25 @@ class DiagnosaController extends Controller
 
                     // Kurangi stok di Master Obat
                     $obat->decrement('stok_tersedia', $jumlah);
+
+                    // FEFO (First Expired, First Out): Kurangi sisa_stok pada batch transaksi masuk yang tanggal kadaluarsanya paling awal
+                    $remainingToDeduct = $jumlah;
+                    $batches = StokTransaksi::where('id_obat', $id_obat)
+                        ->where('jenis_transaksi', 'masuk')
+                        ->where('sisa_stok', '>', 0)
+                        ->orderByRaw('CASE WHEN tanggal_kadaluarsa IS NULL THEN 1 ELSE 0 END, tanggal_kadaluarsa ASC, id_stok_transaksi ASC')
+                        ->get();
+
+                    foreach ($batches as $batch) {
+                        if ($remainingToDeduct <= 0) break;
+                        if ($batch->sisa_stok >= $remainingToDeduct) {
+                            $batch->decrement('sisa_stok', $remainingToDeduct);
+                            $remainingToDeduct = 0;
+                        } else {
+                            $remainingToDeduct -= $batch->sisa_stok;
+                            $batch->update(['sisa_stok' => 0]);
+                        }
+                    }
                 }
             }
 
@@ -150,7 +170,31 @@ class DiagnosaController extends Controller
             // Refund stok obat if resep exists
             if ($diagnosa->resep) {
                 foreach ($diagnosa->resep->resep_details as $detail) {
+                    // Kembalikan stok total di master obat
                     Obat::where('id_obat', $detail->id_obat)->increment('stok_tersedia', $detail->jumlah);
+
+                    // Restore sisa_stok ke batch yang sama persis seperti urutan FEFO saat mengambil
+                    // (expired paling awal → dikembalikan duluan, sama seperti saat dikurangi)
+                    $remainingToRestore = $detail->jumlah;
+
+                    $batches = StokTransaksi::where('id_obat', $detail->id_obat)
+                        ->where('jenis_transaksi', 'masuk')
+                        ->orderByRaw('CASE WHEN tanggal_kadaluarsa IS NULL THEN 1 ELSE 0 END, tanggal_kadaluarsa ASC, id_stok_transaksi ASC')
+                        ->get();
+
+                    foreach ($batches as $batch) {
+                        if ($remainingToRestore <= 0) break;
+
+                        // Kapasitas ruang yang bisa dikembalikan ke batch ini
+                        // (tidak boleh melebihi jumlah awal batch)
+                        $ruangTersisa = $batch->jumlah - $batch->sisa_stok;
+
+                        if ($ruangTersisa <= 0) continue; // batch ini sudah penuh, skip
+
+                        $toRestore = min($remainingToRestore, $ruangTersisa);
+                        $batch->increment('sisa_stok', $toRestore);
+                        $remainingToRestore -= $toRestore;
+                    }
                 }
             }
 

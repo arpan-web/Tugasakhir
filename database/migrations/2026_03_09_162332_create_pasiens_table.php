@@ -19,7 +19,7 @@ return new class extends Migration
             $table->date('tanggal_lahir');
             $table->text('alamat');
             $table->string('no_hp', 12);
-            $table->enum('status_pasien', ['Polnep', 'Umum']);
+            $table->enum('status_pasien', ['Polnep']);
             $table->string('nomor_kartu_pasien', 20)->nullable();
             $table->timestamps();
         });

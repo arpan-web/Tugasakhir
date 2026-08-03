@@ -39,6 +39,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('diagnosa', DiagnosaController::class);
 
     // Manajemen Stok Obat Farmasi (Apotek)
+    Route::post('/stok_transaksi/{id}/musnahkan', [StokTransaksiController::class, 'musnahkan'])->name('stok_transaksi.musnahkan');
     Route::resource('stok_transaksi', StokTransaksiController::class);
 
 
@@ -47,7 +48,15 @@ Route::middleware('auth')->group(function () {
     Route::group(['prefix' => 'laporan', 'as' => 'laporan.'], function () {
         Route::get('/', [App\Http\Controllers\LaporanController::class, 'index'])->name('index');
         Route::get('/kunjungan', [App\Http\Controllers\LaporanController::class, 'kunjungan'])->name('kunjungan');
+        Route::get('/kunjungan/excel', [App\Http\Controllers\LaporanController::class, 'kunjunganExcel'])->name('kunjungan.excel');
+        Route::get('/kunjungan/pdf', [App\Http\Controllers\LaporanController::class, 'kunjunganPdf'])->name('kunjungan.pdf');
         Route::get('/diagnosa', [App\Http\Controllers\LaporanController::class, 'diagnosa'])->name('diagnosa');
         Route::get('/obat', [App\Http\Controllers\LaporanController::class, 'obat'])->name('obat');
+        Route::get('/obat/excel', [App\Http\Controllers\LaporanController::class, 'obatExcel'])->name('obat.excel');
+        Route::get('/obat/pdf', [App\Http\Controllers\LaporanController::class, 'obatPdf'])->name('obat.pdf');
     });
+
+    // Notifikasi
+    Route::post('/notifikasi/{id}/baca', [App\Http\Controllers\NotifikasiController::class, 'baca'])->name('notifikasi.baca');
+    Route::post('/notifikasi/baca-semua', [App\Http\Controllers\NotifikasiController::class, 'bacaSemua'])->name('notifikasi.bacaSemua');
 });

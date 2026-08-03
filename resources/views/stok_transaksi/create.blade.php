@@ -74,6 +74,16 @@
                         <label for="keterangan" class="form-label">Keterangan Tambahan / Asal/Tujuan Obat</label>
                         <textarea class="form-control" id="keterangan" name="keterangan" rows="3" placeholder="Contoh: Penerimaan obat dari supplier Kimia Farma, Obat rusak kedaluwarsa, dll.">{{ old('keterangan') }}</textarea>
                     </div>
+
+                    {{-- Field Kadaluarsa (Hanya aktif saat jenis transaksi = masuk) --}}
+                    <div class="col-md-6 mb-3" id="kadaluarsa-field" style="display: none;">
+                        <label for="tanggal_kadaluarsa" class="form-label fw-bold">
+                            <i data-feather="calendar" class="icon-sm text-warning"></i> Tanggal Kadaluarsa Batch
+                            <span class="badge bg-warning text-dark ms-1" style="font-size:10px;">Opsional</span>
+                        </label>
+                        <input type="date" class="form-control" id="tanggal_kadaluarsa" name="tanggal_kadaluarsa" value="{{ old('tanggal_kadaluarsa') }}">
+                        <div class="form-text text-muted">*Isi sesuai tanggal expired kemasan obat. Digunakan untuk peringatan notifikasi & prioritas pengeluaran (FEFO).</div>
+                    </div>
                 </div>
 
                 <div class="mt-4 text-end">
@@ -90,12 +100,14 @@
     document.addEventListener('DOMContentLoaded', function() {
         const selectObat = document.getElementById('id_obat');
         const satuanLabel = document.getElementById('satuan-label');
+        const radioMasuk = document.getElementById('trx_masuk');
+        const radioKeluar = document.getElementById('trx_keluar');
+        const kadaluarsaField = document.getElementById('kadaluarsa-field');
 
         function updateSatuan() {
             const selectedOption = selectObat.options[selectObat.selectedIndex];
             if (selectedOption.value !== "") {
                 const text = selectedOption.text;
-                // Regex extract satuan " (Tersedia: 5 botol)"
                 const match = text.match(/\(Tersedia:\s+\d+\s+(\w+)\)/);
                 if(match && match[1]) {
                     satuanLabel.textContent = match[1];
@@ -107,8 +119,21 @@
             }
         }
 
+        function toggleKadaluarsa() {
+            if (radioMasuk.checked) {
+                kadaluarsaField.style.display = 'block';
+            } else {
+                kadaluarsaField.style.display = 'none';
+            }
+        }
+
         selectObat.addEventListener('change', updateSatuan);
+        radioMasuk.addEventListener('change', toggleKadaluarsa);
+        radioKeluar.addEventListener('change', toggleKadaluarsa);
+
         updateSatuan();
+        toggleKadaluarsa();
     });
 </script>
+
 @endsection
